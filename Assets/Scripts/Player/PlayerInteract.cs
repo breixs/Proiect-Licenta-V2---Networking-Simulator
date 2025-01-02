@@ -36,7 +36,7 @@ public class PlayerInteract : MonoBehaviour
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().promoptMessage);
                 if(inputManager.onFoot.Interact.triggered)
                 {
-
+                    interactable.BaseInteract();
                 }
             }
         }
