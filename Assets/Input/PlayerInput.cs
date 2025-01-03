@@ -71,6 +71,24 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""614b39f1-ecf5-4058-bda4-c24e67e05192"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Drop"",
+                    ""type"": ""Button"",
+                    ""id"": ""b5290350-5de7-477a-8125-9a0c947bf5d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -247,6 +265,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e700626-b743-403e-baf0-d91f0978ec67"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fe4a04d0-a65b-4f64-8c56-dab531af2669"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drop"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -778,6 +818,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_onFoot_Look = m_onFoot.FindAction("Look", throwIfNotFound: true);
         m_onFoot_Crouch = m_onFoot.FindAction("Crouch", throwIfNotFound: true);
         m_onFoot_Interact = m_onFoot.FindAction("Interact", throwIfNotFound: true);
+        m_onFoot_PickUp = m_onFoot.FindAction("PickUp", throwIfNotFound: true);
+        m_onFoot_Drop = m_onFoot.FindAction("Drop", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -856,6 +898,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_onFoot_Look;
     private readonly InputAction m_onFoot_Crouch;
     private readonly InputAction m_onFoot_Interact;
+    private readonly InputAction m_onFoot_PickUp;
+    private readonly InputAction m_onFoot_Drop;
     public struct OnFootActions
     {
         private @PlayerInput m_Wrapper;
@@ -865,6 +909,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_onFoot_Look;
         public InputAction @Crouch => m_Wrapper.m_onFoot_Crouch;
         public InputAction @Interact => m_Wrapper.m_onFoot_Interact;
+        public InputAction @PickUp => m_Wrapper.m_onFoot_PickUp;
+        public InputAction @Drop => m_Wrapper.m_onFoot_Drop;
         public InputActionMap Get() { return m_Wrapper.m_onFoot; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -889,6 +935,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @PickUp.started += instance.OnPickUp;
+            @PickUp.performed += instance.OnPickUp;
+            @PickUp.canceled += instance.OnPickUp;
+            @Drop.started += instance.OnDrop;
+            @Drop.performed += instance.OnDrop;
+            @Drop.canceled += instance.OnDrop;
         }
 
         private void UnregisterCallbacks(IOnFootActions instance)
@@ -908,6 +960,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @PickUp.started -= instance.OnPickUp;
+            @PickUp.performed -= instance.OnPickUp;
+            @PickUp.canceled -= instance.OnPickUp;
+            @Drop.started -= instance.OnDrop;
+            @Drop.performed -= instance.OnDrop;
+            @Drop.canceled -= instance.OnDrop;
         }
 
         public void RemoveCallbacks(IOnFootActions instance)
@@ -1050,6 +1108,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnPickUp(InputAction.CallbackContext context);
+        void OnDrop(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
