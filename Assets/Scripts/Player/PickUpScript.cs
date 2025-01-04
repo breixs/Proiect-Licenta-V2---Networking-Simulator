@@ -8,7 +8,6 @@ public class PickUpScript : MonoBehaviour
     public Transform holdPos;
     public float throwForce = 500f; 
     public float pickUpRange = 5f; 
-    private float rotationSensitivity = 1f; 
     private GameObject heldObj; 
     private Rigidbody heldObjRb; 
 
@@ -39,19 +38,10 @@ public class PickUpScript : MonoBehaviour
     }
     public void MoveObject()
     {
-        
+        //positionam obiectul la pozitia setata
         heldObj.transform.position = holdPos.transform.position;
-    }
-    public void RotateObject()
-    {
-        if (Input.GetKey(KeyCode.R))
-        {
-            float XaxisRotation = Input.GetAxis("Mouse X") * rotationSensitivity;
-            float YaxisRotation = Input.GetAxis("Mouse Y") * rotationSensitivity;
-            
-            heldObj.transform.Rotate(Vector3.down, XaxisRotation);
-            heldObj.transform.Rotate(Vector3.right, YaxisRotation);
-        }
+        //rotim obiectul la rotatia (0,0,0)
+        heldObj.transform.rotation = holdPos.transform.rotation;
     }
     public void ThrowObject()
     {

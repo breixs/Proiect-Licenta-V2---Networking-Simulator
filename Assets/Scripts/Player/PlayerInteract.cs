@@ -70,8 +70,17 @@ public class PlayerInteract : MonoBehaviour
                         {
                             pickUpScript.PickUpObject(hitInfo.transform.gameObject);
                             pickUpScript.MoveObject();
+                            //pickUpScript.RotateObject();
                         }
 
+                    }
+                    else
+                    {
+                        Debug.Log("hold");
+
+                        pickUpScript.StopClipping();
+                        pickUpScript.DropObject();
+                        isHolding = false;
                     }
                     
                 }             
