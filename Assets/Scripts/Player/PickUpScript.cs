@@ -6,10 +6,11 @@ public class PickUpScript : MonoBehaviour
 {
     public GameObject player;
     public Transform holdPos;
+    public Camera pickUpCam;
     public float throwForce = 500f; 
     public float pickUpRange = 5f; 
     private GameObject heldObj; 
-    private Rigidbody heldObjRb; 
+    private Rigidbody heldObjRb;
 
     PlayerLook playerLookScript;
     void Start()
@@ -23,7 +24,8 @@ public class PickUpScript : MonoBehaviour
             heldObj = pickUpObj; 
             heldObjRb = pickUpObj.GetComponent<Rigidbody>(); 
             heldObjRb.isKinematic = true;
-            heldObjRb.transform.parent = holdPos.transform; 
+            heldObjRb.transform.parent = holdPos.transform;
+            pickUpCam.gameObject.SetActive(true);
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
         }
     }
@@ -31,7 +33,7 @@ public class PickUpScript : MonoBehaviour
     {
         
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
-        
+        pickUpCam.gameObject.SetActive(false);
         heldObjRb.isKinematic = false;
         heldObj.transform.parent = null; 
         heldObj = null; 

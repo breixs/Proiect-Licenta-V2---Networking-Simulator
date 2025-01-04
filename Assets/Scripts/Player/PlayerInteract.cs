@@ -15,8 +15,6 @@ public class PlayerInteract : MonoBehaviour
 
     private PlayerUI playerUI;
 
-    private GameObject heldObj;
-
     private InputManager inputManager;
 
     private PickUpScript pickUpScript;
