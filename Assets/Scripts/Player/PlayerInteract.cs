@@ -7,6 +7,8 @@ using UnityEngine.InputSystem.HID;
 public class PlayerInteract : MonoBehaviour
 {
     public Transform holdPos;
+    public Material transparent;
+    public Material activ;
     private Camera cam;
     [SerializeField]
     private float distance = 4f;
@@ -31,6 +33,13 @@ public class PlayerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var gameObjects = GameObject.FindGameObjectsWithTag("PlaceHolder");
+        foreach (var go in gameObjects)
+        {
+            go.GetComponent<MeshRenderer>().material = transparent;
+        }
+
+
         playerUI.UpdateText(string.Empty);
 
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
@@ -42,7 +51,7 @@ public class PlayerInteract : MonoBehaviour
             Debug.Log("hold");
 
             pickUpScript.StopClipping();
-            pickUpScript.DropObject();
+            pickUpScript.DropObject(false);
             isHolding = false;
         }
 
@@ -77,12 +86,34 @@ public class PlayerInteract : MonoBehaviour
                         Debug.Log("hold");
 
                         pickUpScript.StopClipping();
-                        pickUpScript.DropObject();
+                        pickUpScript.DropObject(false);
                         isHolding = false;
                     }
                     
                 }             
             }
+            if (hitInfo.collider.CompareTag("PlaceHolder"))
+            {
+                if (isHolding)
+                {
+                    hitInfo.collider.GetComponent<MeshRenderer>().material = activ;
+                    if(inputManager.onFoot.Interact.triggered)
+                    {
+                        pickUpScript.SetObject(hitInfo.collider.transform.position);
+                        isHolding = false;
+                        //hitInfo.collider.transform.position
+                    }
+                }
+
+                
+            }
         }
     }
+    /*private void ActivatePlaceholder(GameObject placeholder, bool value)
+    {
+        if (value == true)
+            placeholder.SetActive(true);
+        else
+            placeholder.SetActive(false);
+    }*/
 }

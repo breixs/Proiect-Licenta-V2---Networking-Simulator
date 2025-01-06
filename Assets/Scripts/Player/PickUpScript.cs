@@ -22,19 +22,24 @@ public class PickUpScript : MonoBehaviour
         if (pickUpObj.GetComponent<Rigidbody>()) 
         {
             heldObj = pickUpObj; 
-            heldObjRb = pickUpObj.GetComponent<Rigidbody>(); 
+            heldObjRb = pickUpObj.GetComponent<Rigidbody>();
+            if (heldObjRb.useGravity == false)
+                heldObjRb.useGravity = true;
             heldObjRb.isKinematic = true;
             heldObjRb.transform.parent = holdPos.transform;
             pickUpCam.gameObject.SetActive(true);
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
         }
     }
-    public void DropObject()
+    public void DropObject(bool kinematic)
     {
         
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         pickUpCam.gameObject.SetActive(false);
-        heldObjRb.isKinematic = false;
+        if (kinematic == true)
+            heldObjRb.isKinematic = true;
+        else
+            heldObjRb.isKinematic = false;
         heldObj.transform.parent = null; 
         heldObj = null; 
     }
@@ -53,6 +58,16 @@ public class PickUpScript : MonoBehaviour
         heldObj.transform.parent = null;
         heldObjRb.AddForce(transform.forward * throwForce);
         heldObj = null;
+    }
+    public void SetObject(Vector3 pos)
+    {
+        Vector3 rot = new Vector3(0, 0, 0);
+        heldObj.transform.position = pos;
+        heldObjRb.isKinematic = true;
+        heldObjRb.useGravity = false;
+        heldObj.transform.rotation = Quaternion.Euler(rot);
+        DropObject(true);
+
     }
     public void StopClipping() 
     {

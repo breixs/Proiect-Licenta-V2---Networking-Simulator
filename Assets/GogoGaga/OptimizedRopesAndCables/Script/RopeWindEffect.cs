@@ -33,7 +33,8 @@ namespace GogoGaga.OptimizedRopesAndCables
         }
         void Start()
         {
-            windSeed = Random.Range(-0.3f, 0.3f);
+            //windSeed = Random.Range(-0.3f, 0.3f);
+            windSeed = 0;
         }
 
         // Update is called once per frame
@@ -58,7 +59,7 @@ namespace GogoGaga.OptimizedRopesAndCables
                 //make some noise and calculate the wind direction in degrees
                 float noise = Mathf.PerlinNoise(Time.time + windSeed, 0.0f) * 20f - 10f; //20 degrees of range for the wind direction
                 float perpendicularWindDirection = Vector3.SignedAngle(Vector3.forward, windDirection, Vector3.up);
-                float noisyWindDirection = perpendicularWindDirection + noise; //add the noise to the wind direction
+                float noisyWindDirection = perpendicularWindDirection+noise; //add the noise to the wind direction
 
                 //convert the noisy wind direction back to a vector
                 float radians = noisyWindDirection * Mathf.Deg2Rad;
@@ -69,8 +70,8 @@ namespace GogoGaga.OptimizedRopesAndCables
             else
             {
                 //add Perlin noise to the wind direction
-                float noise = Mathf.PerlinNoise(Time.time + windSeed, 0.0f) * 20f - 10f; //20 degrees of range for the wind direction
-                float noisyWindDirection = windDirectionDegrees + noise; //add the noise to the wind direction
+                float noise = Mathf.PerlinNoise(Time.time + windSeed, 0.0f) - 10f; //20 degrees of range for the wind direction
+                float noisyWindDirection = windDirectionDegrees; //add the noise to the wind direction
 
                 //convert the noisy wind direction back to a vector
                 float radians = noisyWindDirection * Mathf.Deg2Rad;
@@ -79,8 +80,8 @@ namespace GogoGaga.OptimizedRopesAndCables
 
             //apply perlin noise to the wind force with a check for flipped wind direction
             float windNoise = Mathf.PerlinNoise(Time.time + windSeed, 0.0f) * Mathf.PerlinNoise(0.5f * Time.time, 0.0f);
-            if (flipWindDirection) appliedWindForce = ((windForce * -1) * 5f) * windNoise;
-            else appliedWindForce = (windForce * 5f) * windNoise;
+            if (flipWindDirection) appliedWindForce = ((windForce * -1) * 5f)/* * windNoise*/;
+            else appliedWindForce = (windForce * 5f) /** windNoise*/;
 
         }
 
