@@ -9,7 +9,7 @@ public class PlayerMotor : MonoBehaviour
     public float speed = 5f;
     private bool isGrounded;
     public float gravity = -9.8f;
-    public float jumpHeight=1.5f;
+    public float jumpHeight=1f;
 
     bool crouching = false;
     float crouchTimer = 1f;
@@ -18,6 +18,7 @@ public class PlayerMotor : MonoBehaviour
     void Start()
     {
         controller=GetComponent<CharacterController>();
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
