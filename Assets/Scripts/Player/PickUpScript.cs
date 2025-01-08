@@ -31,7 +31,7 @@ public class PickUpScript : MonoBehaviour
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
         }
     }
-    public void DropObject(bool kinematic)
+    public void DropObject(bool kinematic, GameObject parentObj)
     {
         
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
@@ -40,7 +40,12 @@ public class PickUpScript : MonoBehaviour
             heldObjRb.isKinematic = true;
         else
             heldObjRb.isKinematic = false;
-        heldObj.transform.parent = null; 
+        if(parentObj==null)
+        heldObj.transform.parent = null;
+        else
+        {
+            heldObj.transform.parent=parentObj.transform;
+        }    
         heldObj = null; 
     }
     public void MoveObject()
@@ -66,9 +71,20 @@ public class PickUpScript : MonoBehaviour
         heldObjRb.isKinematic = true;
         heldObjRb.useGravity = false;
         heldObj.transform.rotation = Quaternion.Euler(rot);
-        DropObject(true);
+        DropObject(true, null);
 
     }
+
+    public void ConnectObject(Vector3 pos, GameObject parentObj)
+    {
+        Vector3 rot = new Vector3(0, 0, 0);
+        heldObj.transform.position = pos;
+        heldObjRb.isKinematic = true;
+        heldObjRb.useGravity = false;
+        heldObj.transform.rotation = Quaternion.Euler(rot);
+        DropObject(true, parentObj);
+    }
+
     public void StopClipping() 
     {
         var clipRange = Vector3.Distance(heldObj.transform.position, transform.position); 

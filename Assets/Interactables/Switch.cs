@@ -17,7 +17,7 @@ public class Switch : Interactable
     }
     protected override void Interact()
     {
-        Debug.Log("interacted with" + gameObject.name);
+        Debug.Log("interacted with " + gameObject.name);
         //PickUpScript pickUpScript = gameObject.GetComponent<PickUpScript>();
         
         //pickUpScript.PickUpObject(gameObject);

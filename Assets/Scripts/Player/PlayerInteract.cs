@@ -21,6 +21,7 @@ public class PlayerInteract : MonoBehaviour
 
     private PickUpScript pickUpScript;
     private bool isHolding = false;
+    private bool isHoldingRope = false;
 
     void Start()
     {
@@ -33,6 +34,11 @@ public class PlayerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*if (isHoldingRope == true)
+            Debug.Log("rope");
+        else
+            Debug.Log("no rope");*/
+
         var gameObjects = GameObject.FindGameObjectsWithTag("PlaceHolder");
         foreach (var go in gameObjects)
         {
@@ -48,11 +54,12 @@ public class PlayerInteract : MonoBehaviour
 
         if (isHolding && inputManager.onFoot.PickUp.triggered)
         {
-            Debug.Log("hold");
 
             pickUpScript.StopClipping();
-            pickUpScript.DropObject(false);
+            pickUpScript.DropObject(false, null);
             isHolding = false;
+            if (isHoldingRope)
+                isHoldingRope = false;
         }
 
         if (Physics.Raycast(ray, out hitInfo, distance,mask))
@@ -71,30 +78,36 @@ public class PlayerInteract : MonoBehaviour
                 {
                     if (isHolding == false) 
                     {
-                        isHolding = true;
-                        Debug.Log("null");
                         if (hitInfo.transform.gameObject.tag == "CanPickUp")
                         {
+                            isHolding = true;
                             pickUpScript.PickUpObject(hitInfo.transform.gameObject);
                             pickUpScript.MoveObject();
                             //pickUpScript.RotateObject();
+                        }
+                        if (hitInfo.transform.gameObject.tag == "PickUpRope")
+                        {
+                            isHolding = true;
+                            isHoldingRope = true;
+                            pickUpScript.PickUpObject(hitInfo.transform.gameObject);
+                            pickUpScript.MoveObject();
                         }
 
                     }
                     else
                     {
-                        Debug.Log("hold");
-
                         pickUpScript.StopClipping();
-                        pickUpScript.DropObject(false);
+                        pickUpScript.DropObject(false, null);
                         isHolding = false;
+                        if (isHoldingRope)
+                            isHoldingRope = false;
                     }
                     
                 }             
             }
             if (hitInfo.collider.CompareTag("PlaceHolder"))
             {
-                if (isHolding)
+                if (isHolding && !isHoldingRope)
                 {
                     hitInfo.collider.GetComponent<MeshRenderer>().material = activ;
                     if(inputManager.onFoot.Interact.triggered)
@@ -104,16 +117,21 @@ public class PlayerInteract : MonoBehaviour
                         //hitInfo.collider.transform.position
                     }
                 }
+            }
+            if (hitInfo.collider.CompareTag("SwitchPort"))
+            {
+                if (isHoldingRope)
+                {
+                    if (inputManager.onFoot.Interact.triggered)
+                    {
+                        pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject);
+                        isHoldingRope = false;
+                        isHolding = false;
+                    }
 
-                
+                }
+
             }
         }
     }
-    /*private void ActivatePlaceholder(GameObject placeholder, bool value)
-    {
-        if (value == true)
-            placeholder.SetActive(true);
-        else
-            placeholder.SetActive(false);
-    }*/
 }

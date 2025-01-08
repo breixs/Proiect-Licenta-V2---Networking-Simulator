@@ -6,6 +6,9 @@ TagManager:
   tags:
   - CanPickUp
   - PlaceHolder
+  - PickUpRope
+  - SwitchPort
+  - CableParent
   layers:
   - Default
   - TransparentFX
