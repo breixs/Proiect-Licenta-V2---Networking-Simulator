@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Switch : Interactable
 {
-    // Start is called before the first frame update
+    public TextMeshProUGUI nameText;
     void Start()
     {
-        
+        nameText.text=gameObject.name;
     }
 
     // Update is called once per frame

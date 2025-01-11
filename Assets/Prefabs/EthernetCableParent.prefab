@@ -197,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startNode: {fileID: 8263436433259747998}
   endNode: {fileID: 951259555439252937}
+  taskText: {fileID: 0}
 --- !u!1 &8263436433259747998
 GameObject:
   m_ObjectHideFlags: 0

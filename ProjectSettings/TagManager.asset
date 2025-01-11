@@ -9,6 +9,7 @@ TagManager:
   - PickUpRope
   - SwitchPort
   - CableParent
+  - Switch
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UIText
+    uniqueID: 3064121949
+    locked: 0
+  - name: UIBackground
+    uniqueID: 1858579601
     locked: 0

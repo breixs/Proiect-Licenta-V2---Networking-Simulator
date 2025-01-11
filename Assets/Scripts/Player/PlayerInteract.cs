@@ -38,7 +38,7 @@ public class PlayerInteract : MonoBehaviour
             Debug.Log("rope");
         else
             Debug.Log("no rope");*/
-
+        playerUI.DeactivateText();
         var gameObjects = GameObject.FindGameObjectsWithTag("PlaceHolder");
         foreach (var go in gameObjects)
         {
@@ -46,7 +46,7 @@ public class PlayerInteract : MonoBehaviour
         }
 
 
-        playerUI.UpdateText(string.Empty);
+        //playerUI.UpdateText(string.Empty);
 
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * distance);
@@ -54,7 +54,6 @@ public class PlayerInteract : MonoBehaviour
 
         if (isHolding && inputManager.onFoot.PickUp.triggered)
         {
-
             pickUpScript.StopClipping();
             pickUpScript.DropObject(false, null);
             isHolding = false;
@@ -78,7 +77,7 @@ public class PlayerInteract : MonoBehaviour
                 {
                     if (isHolding == false) 
                     {
-                        if (hitInfo.transform.gameObject.tag == "CanPickUp")
+                        if (hitInfo.transform.gameObject.tag == "CanPickUp" || hitInfo.transform.gameObject.tag=="Switch")
                         {
                             isHolding = true;
                             pickUpScript.PickUpObject(hitInfo.transform.gameObject);

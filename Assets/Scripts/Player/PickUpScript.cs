@@ -27,7 +27,7 @@ public class PickUpScript : MonoBehaviour
                 heldObjRb.useGravity = true;
             heldObjRb.isKinematic = true;
             heldObjRb.transform.parent = holdPos.transform;
-            pickUpCam.gameObject.SetActive(true);
+            //pickUpCam.gameObject.SetActive(true);
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
         }
     }
@@ -35,7 +35,7 @@ public class PickUpScript : MonoBehaviour
     {
         
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
-        pickUpCam.gameObject.SetActive(false);
+        //pickUpCam.gameObject.SetActive(false);
         if (kinematic == true)
             heldObjRb.isKinematic = true;
         else
