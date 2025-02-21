@@ -18,6 +18,8 @@ public class CheckCableParents : MonoBehaviour
     private GetCablesScript getCablesScript;
     private bool taskCompleted = false;
 
+    private Dictionary<GameObject, List<GameObject>> switchConnections;
+
     void Start()
     {
         cables = new GameObject[CableManager.gameObject.transform.childCount - 1];
@@ -62,25 +64,36 @@ public class CheckCableParents : MonoBehaviour
             startNodes[i] = cables[i].transform.GetChild(0).gameObject;
             endNodes[i] = cables[i].transform.GetChild(1).gameObject;
         }
+
+        switchConnections = new Dictionary<GameObject, List<GameObject>>();
     }
 
     void Update()
     {
-        bool isConnected = false;
+        switchConnections.Clear();
 
         for (int i = 0; i < cables.Length; i++)
         {
             if (startNodes[i].transform.parent != null && endNodes[i].transform.parent != null)
             {
-                Debug.Log("start node parent= " + startNodes[i].transform.parent.name + " end node parent= " + endNodes[i].transform.parent.name);
-                if ((startNodes[i].transform.parent.gameObject == switch1 && endNodes[i].transform.parent.gameObject == switch2) ||
-                    (startNodes[i].transform.parent.gameObject == switch2 && endNodes[i].transform.parent.gameObject == switch1))
+                GameObject startSwitch = startNodes[i].transform.parent.gameObject;
+                GameObject endSwitch = endNodes[i].transform.parent.gameObject;
+
+                if (!switchConnections.ContainsKey(startSwitch))
                 {
-                    isConnected = true;
-                    break;
+                    switchConnections[startSwitch] = new List<GameObject>();
                 }
+                if (!switchConnections.ContainsKey(endSwitch))
+                {
+                    switchConnections[endSwitch] = new List<GameObject>();
+                }
+
+                switchConnections[startSwitch].Add(endSwitch);
+                switchConnections[endSwitch].Add(startSwitch);
             }
         }
+
+        bool isConnected = BFS(switch1, switch2);
 
         if (isConnected && !taskCompleted)
         {
@@ -92,6 +105,41 @@ public class CheckCableParents : MonoBehaviour
             taskCompleted = false;
             updateTasktext("Task : Connect " + switch1.name + " with " + switch2.name);
         }
+    }
+
+    private bool BFS(GameObject start, GameObject end)
+    {
+        if (start == end) return true;
+
+        Queue<GameObject> queue = new Queue<GameObject>();
+        HashSet<GameObject> visited = new HashSet<GameObject>();
+
+        queue.Enqueue(start);
+        visited.Add(start);
+
+        while (queue.Count > 0)
+        {
+            GameObject current = queue.Dequeue();
+
+            if (switchConnections.ContainsKey(current))
+            {
+                foreach (GameObject neighbor in switchConnections[current])
+                {
+                    if (neighbor == end)
+                    {
+                        return true;
+                    }
+
+                    if (!visited.Contains(neighbor))
+                    {
+                        visited.Add(neighbor);
+                        queue.Enqueue(neighbor);
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     private void updateTasktext(string message)
