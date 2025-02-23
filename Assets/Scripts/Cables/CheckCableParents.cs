@@ -54,7 +54,7 @@ public class CheckCableParents : MonoBehaviour
         Debug.Log("switch1= " + switch1.name);
         Debug.Log("switch2= " + switch2.name);
 
-        updateTasktext("Task : Connect " + switch1.name + " with " + switch2.name);
+        updateTaskText("Task : Connect " + switch1.name + " with " + switch2.name);
 
         startNodes = new GameObject[cables.Length];
         endNodes = new GameObject[cables.Length];
@@ -98,12 +98,12 @@ public class CheckCableParents : MonoBehaviour
         if (isConnected && !taskCompleted)
         {
             taskCompleted = true;
-            updateTasktext("TASKS COMPLETED");
+            updateTaskText("TASKS COMPLETED");
         }
         else if (!isConnected && taskCompleted)
         {
             taskCompleted = false;
-            updateTasktext("Task : Connect " + switch1.name + " with " + switch2.name);
+            updateTaskText("Task : Connect " + switch1.name + " with " + switch2.name);
         }
     }
 
@@ -142,7 +142,7 @@ public class CheckCableParents : MonoBehaviour
         return false;
     }
 
-    private void updateTasktext(string message)
+    private void updateTaskText(string message)
     {
         taskText.text = message;
     }
