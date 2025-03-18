@@ -11,6 +11,7 @@ public class PickUpScript : MonoBehaviour
     public float pickUpRange = 5f; 
     private GameObject heldObj; 
     private Rigidbody heldObjRb;
+    private Collider heldObjColl;
 
     PlayerLook playerLookScript;
     void Start()
@@ -21,14 +22,26 @@ public class PickUpScript : MonoBehaviour
     {
         if (pickUpObj.GetComponent<Rigidbody>()) 
         {
-            heldObj = pickUpObj; 
-            heldObjRb = pickUpObj.GetComponent<Rigidbody>();
+            heldObj = pickUpObj;
+            if (pickUpObj.GetComponent<Collider>())
+            {
+                Debug.Log("Got Collider of " + pickUpObj.name);
+                heldObjColl = pickUpObj.GetComponent<Collider>();
+                heldObjColl.isTrigger=true;
+            }
+            //if (pickUpObj.GetComponent<SphereCollider>())
+            //{
+            //    Debug.Log("Got Collider of " + pickUpObj.name);
+            //    heldObjColl = pickUpObj.GetComponent<SphereCollider>();
+            //    heldObjColl.isTrigger = true;
+            //}
+                heldObjRb = pickUpObj.GetComponent<Rigidbody>();  
             if (heldObjRb.useGravity == false)
                 heldObjRb.useGravity = true;
             heldObjRb.isKinematic = true;
             heldObjRb.transform.parent = holdPos.transform;
             //pickUpCam.gameObject.SetActive(true);
-            Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
+            //Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
         }
     }
     public void DropObject(bool kinematic, GameObject parentObj)
@@ -46,7 +59,8 @@ public class PickUpScript : MonoBehaviour
         {
             heldObj.transform.parent=parentObj.transform;
         }    
-        heldObj = null; 
+        heldObj = null;
+        heldObjColl.isTrigger = false;
     }
     public void MoveObject()
     {
@@ -54,6 +68,7 @@ public class PickUpScript : MonoBehaviour
         heldObj.transform.position = holdPos.transform.position;
         //rotim obiectul la rotatia (0,0,0)
         heldObj.transform.rotation = holdPos.transform.rotation;
+        heldObjColl.isTrigger = true;
     }
     public void ThrowObject()
     {
@@ -66,18 +81,19 @@ public class PickUpScript : MonoBehaviour
     }
     public void SetObject(Vector3 pos)
     {
-        Vector3 rot = new Vector3(0, 0, 0);
+        Vector3 rot = new Vector3(0, -90, 0);
         heldObj.transform.position = pos;
         heldObjRb.isKinematic = true;
         heldObjRb.useGravity = false;
         heldObj.transform.rotation = Quaternion.Euler(rot);
+        heldObjColl.isTrigger = false;
         DropObject(true, null);
 
     }
 
     public void ConnectObject(Vector3 pos, GameObject parentObj)
     {
-        Vector3 rot = new Vector3(0, 0, 0);
+        Vector3 rot = new Vector3(0, -90, 0);
         heldObj.transform.position = pos;
         heldObjRb.isKinematic = true;
         heldObjRb.useGravity = false;

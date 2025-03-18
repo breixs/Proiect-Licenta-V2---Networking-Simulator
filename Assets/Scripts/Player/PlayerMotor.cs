@@ -69,6 +69,8 @@ public class PlayerMotor : MonoBehaviour
         if(isGrounded)
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3 * gravity);
+            if(crouching)
+                Crouch();
         }
     }
 
