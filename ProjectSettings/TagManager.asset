@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - CanPickUp
-  - PlaceHolder
   - PickUpRope
   - SwitchPort
   - CableParent
   - Switch
+  - Router
+  - PlaceHolderSW
+  - PlaceHolderR
   layers:
   - Default
   - TransparentFX

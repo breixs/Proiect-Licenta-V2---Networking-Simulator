@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -22,6 +23,9 @@ public class PlayerInteract : MonoBehaviour
     private PickUpScript pickUpScript;
     private bool isHolding = false;
     private bool isHoldingRope = false;
+    //private bool isHoldingSW = false;
+    //private bool isHoldingR = false;
+    private string holdTag;
 
     void Start()
     {
@@ -39,8 +43,13 @@ public class PlayerInteract : MonoBehaviour
         else
             Debug.Log("no rope");*/
         playerUI.DeactivateText();
-        var gameObjects = GameObject.FindGameObjectsWithTag("PlaceHolder");
-        foreach (var go in gameObjects)
+        GameObject[] placeHoldersSW = GameObject.FindGameObjectsWithTag("PlaceHolderSW");
+        GameObject[] placeHoldersR = GameObject.FindGameObjectsWithTag("PlaceHolderR");
+        GameObject[] placeHolders = new GameObject[placeHoldersSW.Length + placeHoldersR.Length];
+
+        placeHoldersSW.CopyTo(placeHolders, 0);
+        placeHoldersR.CopyTo(placeHolders, placeHoldersSW.Length);
+        foreach (var go in placeHolders)
         {
             go.GetComponent<MeshRenderer>().material = transparent;
         }
@@ -77,8 +86,10 @@ public class PlayerInteract : MonoBehaviour
                 {
                     if (isHolding == false) 
                     {
-                        if (hitInfo.transform.gameObject.tag == "CanPickUp" || hitInfo.transform.gameObject.tag=="Switch")
+                        if (hitInfo.transform.gameObject.tag == "CanPickUp" || hitInfo.transform.gameObject.tag=="Switch" || hitInfo.transform.gameObject.tag == "Router")
                         {
+                            holdTag = hitInfo.transform.gameObject.tag;
+                            Debug.Log(holdTag);
                             isHolding = true;
                             pickUpScript.PickUpObject(hitInfo.transform.gameObject);
                             pickUpScript.MoveObject();
@@ -104,11 +115,13 @@ public class PlayerInteract : MonoBehaviour
                     
                 }             
             }
-            if (hitInfo.collider.CompareTag("PlaceHolder"))
+            if (hitInfo.collider.CompareTag("PlaceHolderSW") || hitInfo.collider.CompareTag("PlaceHolderR"))
             {
-                if (isHolding && !isHoldingRope)
+                if (isHolding && !isHoldingRope && holdTag == "Switch")
                 {
-                    hitInfo.collider.GetComponent<MeshRenderer>().material = activ;
+                    if(hitInfo.collider.CompareTag("PlaceHolderSW"))
+                        hitInfo.collider.GetComponent<MeshRenderer>().material = activ;
+
                     if(inputManager.onFoot.Interact.triggered)
                     {
                         pickUpScript.SetObject(hitInfo.collider.transform.position);
@@ -116,7 +129,21 @@ public class PlayerInteract : MonoBehaviour
                         //hitInfo.collider.transform.position
                     }
                 }
+                else if(isHolding && !isHoldingRope && holdTag == "Router")
+                {
+                    if(hitInfo.collider.CompareTag("PlaceHolderR"))
+                        hitInfo.collider.GetComponent<MeshRenderer>().material = activ;
+
+                    if (inputManager.onFoot.Interact.triggered)
+                    {
+                        pickUpScript.SetObject(hitInfo.collider.transform.position);
+                        isHolding = false;
+                        //hitInfo.collider.transform.position
+                    }
+                }
+                
             }
+
             if (hitInfo.collider.CompareTag("SwitchPort"))
             {
                 if (isHoldingRope)

@@ -93,11 +93,11 @@ public class PickUpScript : MonoBehaviour
 
     public void ConnectObject(Vector3 pos, GameObject parentObj)
     {
-        Vector3 rot = new Vector3(0, -90, 0);
+        //Vector3 rot = new Vector3(0, -90, 0);
         heldObj.transform.position = pos;
         heldObjRb.isKinematic = true;
         heldObjRb.useGravity = false;
-        heldObj.transform.rotation = Quaternion.Euler(rot);
+        heldObj.transform.rotation = parentObj.transform.rotation;
         DropObject(true, parentObj);
     }
 
