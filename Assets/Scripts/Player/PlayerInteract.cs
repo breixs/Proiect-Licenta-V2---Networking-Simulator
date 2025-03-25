@@ -42,7 +42,9 @@ public class PlayerInteract : MonoBehaviour
             Debug.Log("rope");
         else
             Debug.Log("no rope");*/
-        playerUI.DeactivateText();
+        if(playerUI != null)
+            playerUI.DeactivateText();
+
         GameObject[] placeHoldersSW = GameObject.FindGameObjectsWithTag("PlaceHolderSW");
         GameObject[] placeHoldersR = GameObject.FindGameObjectsWithTag("PlaceHolderR");
         GameObject[] placeHolders = new GameObject[placeHoldersSW.Length + placeHoldersR.Length];
