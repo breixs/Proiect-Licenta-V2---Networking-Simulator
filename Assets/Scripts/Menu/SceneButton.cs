@@ -8,6 +8,7 @@ public class SceneButton : MonoBehaviour
     public string sceneName;
     public void ChangeScene()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(sceneName);
     }
 }
