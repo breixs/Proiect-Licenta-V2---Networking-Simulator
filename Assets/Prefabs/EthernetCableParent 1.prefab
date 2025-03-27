@@ -77,17 +77,17 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 5.751938, y: 3.0104527, z: 7.422993}
-  - {x: 5.7536445, y: 3.010453, z: 7.504394}
-  - {x: 5.7553506, y: 3.0104527, z: 7.5857954}
-  - {x: 5.757056, y: 3.0104527, z: 7.6671953}
-  - {x: 5.758763, y: 3.010453, z: 7.7485967}
-  - {x: 5.7604694, y: 3.0104527, z: 7.829997}
-  - {x: 5.7621756, y: 3.0104527, z: 7.911398}
-  - {x: 5.763881, y: 3.0104527, z: 7.9927983}
-  - {x: 5.765588, y: 3.0104527, z: 8.0742}
-  - {x: 5.767294, y: 3.0104527, z: 8.1556}
-  - {x: 5.769, y: 3.0104527, z: 8.237}
+  - {x: 5.751938, y: 3.0104527, z: 8.341993}
+  - {x: 5.7536445, y: 3.1550527, z: 8.340194}
+  - {x: 5.7553506, y: 3.2996528, z: 8.338394}
+  - {x: 5.757056, y: 3.4442527, z: 8.336593}
+  - {x: 5.758763, y: 3.588853, z: 8.334793}
+  - {x: 5.7604694, y: 3.7334528, z: 8.332993}
+  - {x: 5.7621756, y: 3.8780527, z: 8.331193}
+  - {x: 5.763881, y: 4.0226526, z: 8.329393}
+  - {x: 5.765588, y: 4.167253, z: 8.327593}
+  - {x: 5.767294, y: 4.311853, z: 8.325792}
+  - {x: 5.769, y: 4.456453, z: 8.323993}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -255,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 951259555439252937}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1470623, y: -0.205, z: 0.030007362}
+  m_LocalPosition: {x: 1.1470623, y: 1.241, z: 0.117}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -356,7 +356,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -439,7 +439,7 @@ Transform:
   m_GameObject: {fileID: 8263436433259747998}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.13, y: -0.205, z: -0.784}
+  m_LocalPosition: {x: 1.13, y: -0.205, z: 0.135}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -540,7 +540,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -588,7 +588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c0cc013a0dee2c4cb3965e109a9a6d8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.23
+      value: 0.03000736
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c0cc013a0dee2c4cb3965e109a9a6d8, type: 3}
       propertyPath: m_LocalRotation.w
