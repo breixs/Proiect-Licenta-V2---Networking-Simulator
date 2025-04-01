@@ -23,9 +23,10 @@ public class PlayerInteract : MonoBehaviour
     private PickUpScript pickUpScript;
     private bool isHolding = false;
     private bool isHoldingRope = false;
-    //private bool isHoldingSW = false;
-    //private bool isHoldingR = false;
     private string holdTag;
+    GameObject[] placeHoldersSW;
+    GameObject[] placeHoldersR;
+    GameObject[] placeHolders;
 
     void Start()
     {
@@ -33,30 +34,23 @@ public class PlayerInteract : MonoBehaviour
         playerUI = GetComponent<PlayerUI>();
         inputManager = GetComponent<InputManager>();
         pickUpScript = gameObject.GetComponent<PickUpScript>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /*if (isHoldingRope == true)
-            Debug.Log("rope");
-        else
-            Debug.Log("no rope");*/
-        if(playerUI != null)
-            playerUI.DeactivateText();
-
-        GameObject[] placeHoldersSW = GameObject.FindGameObjectsWithTag("PlaceHolderSW");
-        GameObject[] placeHoldersR = GameObject.FindGameObjectsWithTag("PlaceHolderR");
-        GameObject[] placeHolders = new GameObject[placeHoldersSW.Length + placeHoldersR.Length];
+        placeHoldersSW = GameObject.FindGameObjectsWithTag("PlaceHolderSW");
+        placeHoldersR = GameObject.FindGameObjectsWithTag("PlaceHolderR");
+        placeHolders = new GameObject[placeHoldersSW.Length + placeHoldersR.Length];
 
         placeHoldersSW.CopyTo(placeHolders, 0);
         placeHoldersR.CopyTo(placeHolders, placeHoldersSW.Length);
+    }
+
+    void Update()
+    {
+        if(playerUI != null)
+            playerUI.DeactivateText();
+
         foreach (var go in placeHolders)
         {
             go.GetComponent<MeshRenderer>().material = transparent;
         }
-
-
         //playerUI.UpdateText(string.Empty);
 
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);

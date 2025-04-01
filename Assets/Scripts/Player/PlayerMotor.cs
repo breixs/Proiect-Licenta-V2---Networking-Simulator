@@ -14,14 +14,12 @@ public class PlayerMotor : MonoBehaviour
     bool crouching = false;
     float crouchTimer = 1f;
     bool lerpCrouch = false;
-    // Start is called before the first frame update
     void Start()
     {
         controller=GetComponent<CharacterController>();
         Cursor.visible = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         isGrounded=controller.isGrounded;
@@ -50,17 +48,20 @@ public class PlayerMotor : MonoBehaviour
     //preia inputurile din InputManager si le trimite la characther controller
     public void ProcessMove(Vector2 input)
     {
-        Vector3 moveDirection = Vector3.zero;
-        moveDirection.x = input.x;
-        moveDirection.z = input.y;
-        controller.Move(transform.TransformDirection(moveDirection)*speed*Time.deltaTime);
-        //se aplica forta gravitationala constanta
-        playerVelocity.y += gravity * Time.deltaTime;
-        if (isGrounded && playerVelocity.y<0)
-            playerVelocity.y = -2f;
+        if(!PlayerUI.paused && !PlayerUI.notebookState)
+        {
+            Vector3 moveDirection = Vector3.zero;
+            moveDirection.x = input.x;
+            moveDirection.z = input.y;
+            controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
+            //se aplica forta gravitationala constanta
+            playerVelocity.y += gravity * Time.deltaTime;
+            if (isGrounded && playerVelocity.y < 0)
+                playerVelocity.y = -2f;
 
-        controller.Move(playerVelocity * Time.deltaTime);
-        //Debug.Log(playerVelocity.y);
+            controller.Move(playerVelocity * Time.deltaTime);
+            //Debug.Log(playerVelocity.y);
+        }
         
     }
 

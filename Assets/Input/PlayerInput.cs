@@ -98,6 +98,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Notebook"",
+                    ""type"": ""Button"",
+                    ""id"": ""69065706-498b-4ce3-a3b5-469751d3c68e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -329,6 +338,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a238bb7b-9e78-4af3-814c-7714eb29174f"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Notebook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -863,6 +883,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_onFoot_PickUp = m_onFoot.FindAction("PickUp", throwIfNotFound: true);
         m_onFoot_Drop = m_onFoot.FindAction("Drop", throwIfNotFound: true);
         m_onFoot_Pause = m_onFoot.FindAction("Pause", throwIfNotFound: true);
+        m_onFoot_Notebook = m_onFoot.FindAction("Notebook", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -944,6 +965,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_onFoot_PickUp;
     private readonly InputAction m_onFoot_Drop;
     private readonly InputAction m_onFoot_Pause;
+    private readonly InputAction m_onFoot_Notebook;
     public struct OnFootActions
     {
         private @PlayerInput m_Wrapper;
@@ -956,6 +978,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @PickUp => m_Wrapper.m_onFoot_PickUp;
         public InputAction @Drop => m_Wrapper.m_onFoot_Drop;
         public InputAction @Pause => m_Wrapper.m_onFoot_Pause;
+        public InputAction @Notebook => m_Wrapper.m_onFoot_Notebook;
         public InputActionMap Get() { return m_Wrapper.m_onFoot; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -989,6 +1012,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Notebook.started += instance.OnNotebook;
+            @Notebook.performed += instance.OnNotebook;
+            @Notebook.canceled += instance.OnNotebook;
         }
 
         private void UnregisterCallbacks(IOnFootActions instance)
@@ -1017,6 +1043,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Notebook.started -= instance.OnNotebook;
+            @Notebook.performed -= instance.OnNotebook;
+            @Notebook.canceled -= instance.OnNotebook;
         }
 
         public void RemoveCallbacks(IOnFootActions instance)
@@ -1162,6 +1191,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnPickUp(InputAction.CallbackContext context);
         void OnDrop(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnNotebook(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
