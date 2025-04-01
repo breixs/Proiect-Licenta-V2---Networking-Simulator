@@ -21,12 +21,24 @@ public class PlayerInteract : MonoBehaviour
     private InputManager inputManager;
 
     private PickUpScript pickUpScript;
+
     private bool isHolding = false;
     private bool isHoldingRope = false;
     private string holdTag;
+
     GameObject[] placeHoldersSW;
     GameObject[] placeHoldersR;
     GameObject[] placeHolders;
+
+    public AudioSource audioSourceDoor;
+    public AudioClip audioClipDoor;
+    public AudioSource audioSourceConnect;
+    public AudioClip audioClipConnect;
+
+    private void Awake()
+    {
+        audioSourceDoor.PlayOneShot(audioClipDoor);
+    }
 
     void Start()
     {
@@ -37,13 +49,13 @@ public class PlayerInteract : MonoBehaviour
         placeHoldersSW = GameObject.FindGameObjectsWithTag("PlaceHolderSW");
         placeHoldersR = GameObject.FindGameObjectsWithTag("PlaceHolderR");
         placeHolders = new GameObject[placeHoldersSW.Length + placeHoldersR.Length];
-
         placeHoldersSW.CopyTo(placeHolders, 0);
         placeHoldersR.CopyTo(placeHolders, placeHoldersSW.Length);
     }
 
     void Update()
     {
+
         if(playerUI != null)
             playerUI.DeactivateText();
 
@@ -146,6 +158,7 @@ public class PlayerInteract : MonoBehaviour
                 {
                     if (inputManager.onFoot.Interact.triggered)
                     {
+                        audioSourceConnect.PlayOneShot(audioClipConnect);
                         pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject);
                         isHoldingRope = false;
                         isHolding = false;
