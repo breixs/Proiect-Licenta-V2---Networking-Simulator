@@ -8340,7 +8340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promoptMessage: 'E : Exit Level'
-  endMenu: {fileID: 1584045229}
+  nameText: {fileID: 0}
 --- !u!1 &1993838161
 GameObject:
   m_ObjectHideFlags: 0
@@ -9121,10 +9121,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5656126637210478056, guid: cf36a3ae31d171d4e80cb35453bdeba9, type: 3}
-      propertyPath: endMenu
-      value: 
-      objectReference: {fileID: 1584045229}
     - target: {fileID: 5656126637210478056, guid: cf36a3ae31d171d4e80cb35453bdeba9, type: 3}
       propertyPath: taskText
       value: 

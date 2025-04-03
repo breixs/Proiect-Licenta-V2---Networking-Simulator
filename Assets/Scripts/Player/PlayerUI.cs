@@ -9,9 +9,9 @@ public class PlayerUI : MonoBehaviour
 {
     public TextMeshProUGUI promptText;
     public TextMeshProUGUI taskText;
-    //public TextMeshProUGUI 
     public GameObject pauseMenu;
     public GameObject notebookMenu;
+    public GameObject endMenu;
     private InputManager inputManager;
     public static bool paused = false;
     public static bool notebookState = false;
@@ -21,7 +21,9 @@ public class PlayerUI : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         pauseMenu.SetActive(false);
         notebookMenu.SetActive(false);
+        endMenu.SetActive(false) ;
         promptText.gameObject.SetActive(false);
+        Time.timeScale = 1f;
     }
     private void Update()
     {
@@ -38,7 +40,7 @@ public class PlayerUI : MonoBehaviour
                 ResumeGame();
             }
         }
-        if (inputManager.onFoot.Notebook.triggered && !paused)
+        if (inputManager.onFoot.Notebook.triggered && !paused && !endMenu.activeSelf)
         {
             notebookState = !notebookState;
             OpenNotebook(notebookState);
@@ -56,9 +58,12 @@ public class PlayerUI : MonoBehaviour
 
     public void PauseGame()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        paused = true;
+        if (!endMenu.activeSelf)
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+            paused = true;
+        }
     }
     public void ResumeGame()
     {

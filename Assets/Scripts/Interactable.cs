@@ -11,7 +11,17 @@ public abstract class Interactable : MonoBehaviour
         Interact();
     }
 
+    public void ConditionalInterract()
+    {
+        CondInteract();
+    }
+
     protected virtual void Interact()
+    {
+
+    }
+
+    protected virtual void CondInteract()
     {
 
     }

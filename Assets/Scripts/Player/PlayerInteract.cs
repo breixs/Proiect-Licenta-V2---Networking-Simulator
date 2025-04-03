@@ -92,6 +92,9 @@ public class PlayerInteract : MonoBehaviour
                 if (inputManager.onFoot.Interact.triggered)
                 {
                     interactable.BaseInteract();
+
+                    if (taskScript.completed==true && hitInfo.transform.gameObject.tag=="Exit")
+                        interactable.ConditionalInterract();
                 }
                 //ridicarea unui obiect (tasta F)
                 if (inputManager.onFoot.PickUp.triggered)
@@ -169,10 +172,6 @@ public class PlayerInteract : MonoBehaviour
                     }
 
                 }
-
-            }
-            if (hitInfo.collider.CompareTag("Exit") && taskScript.TaskCompleted())
-            {
 
             }
         }

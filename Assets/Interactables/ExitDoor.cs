@@ -5,20 +5,14 @@ using UnityEngine;
 
 public class ExitDoor : Interactable
 {
-    public TextMeshProUGUI nameText;
-    void Start()
+    public GameObject endMenu;
+    protected override void CondInteract()
     {
-        //nameText.text = gameObject.name;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        endMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
     protected override void Interact()
     {
-        Debug.Log("interacted with " + gameObject.name);
-      
+        Debug.Log("cannot leave yet");
     }
 }

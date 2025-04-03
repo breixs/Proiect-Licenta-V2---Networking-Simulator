@@ -15,6 +15,7 @@ public class TaskScript : MonoBehaviour
     private GameObject endDevice1, endDevice2, middleDevice;
     bool isConnected = false;
     bool taskCompleted = false;
+    public bool completed=false;
 
     private void Start()
     {
@@ -27,12 +28,17 @@ public class TaskScript : MonoBehaviour
         if (currentScene.name == "Level_1")
             if(Level1Task())
             {
-                TaskCompleted();
+                completed=true;
+            }
+        else
+            {
+                completed=false;
             }
     }
 
     private bool Level1Task()
     {
+        //bool task1Completed = false;
         if (endDevices == null)
         {
             endDevices = ChooseCableParents.instance.ChooseEndDevices("Switch", "Switch");
@@ -59,11 +65,4 @@ public class TaskScript : MonoBehaviour
         return false;
         
     }
-
-    public bool TaskCompleted()
-    {
-        return true;
-    }
-
-
 }
