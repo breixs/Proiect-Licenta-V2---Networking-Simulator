@@ -22,6 +22,8 @@ public class PlayerInteract : MonoBehaviour
 
     private PickUpScript pickUpScript;
 
+    private TaskScript taskScript;
+
     private bool isHolding = false;
     private bool isHoldingRope = false;
     private string holdTag;
@@ -46,6 +48,8 @@ public class PlayerInteract : MonoBehaviour
         playerUI = GetComponent<PlayerUI>();
         inputManager = GetComponent<InputManager>();
         pickUpScript = gameObject.GetComponent<PickUpScript>();
+        taskScript = gameObject.GetComponent<TaskScript>();
+
         placeHoldersSW = GameObject.FindGameObjectsWithTag("PlaceHolderSW");
         placeHoldersR = GameObject.FindGameObjectsWithTag("PlaceHolderR");
         placeHolders = new GameObject[placeHoldersSW.Length + placeHoldersR.Length];
@@ -165,6 +169,10 @@ public class PlayerInteract : MonoBehaviour
                     }
 
                 }
+
+            }
+            if (hitInfo.collider.CompareTag("Exit") && taskScript.TaskCompleted())
+            {
 
             }
         }

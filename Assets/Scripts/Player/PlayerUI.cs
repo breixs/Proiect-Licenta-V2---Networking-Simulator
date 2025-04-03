@@ -9,6 +9,7 @@ public class PlayerUI : MonoBehaviour
 {
     public TextMeshProUGUI promptText;
     public TextMeshProUGUI taskText;
+    //public TextMeshProUGUI 
     public GameObject pauseMenu;
     public GameObject notebookMenu;
     private InputManager inputManager;
@@ -74,5 +75,10 @@ public class PlayerUI : MonoBehaviour
     public void OpenNotebook(bool state)
     {
         notebookMenu.SetActive(state);
+    }
+
+    public void UpdateTaskText(string txt)
+    {
+        taskText.text = txt;
     }
 }

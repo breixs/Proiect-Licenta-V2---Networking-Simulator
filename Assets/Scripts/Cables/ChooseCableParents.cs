@@ -4,47 +4,74 @@ using UnityEngine;
 
 public class ChooseCableParents : MonoBehaviour
 {
-    private GameObject switch1, switch2;
-    void Start()
+    public static ChooseCableParents instance;
+    private void Awake()
     {
-        int rand1 = 0;
-        int rand2 = 0;
+        instance = this;
+    }
+
+    public GameObject[] ChooseEndDevices(string tag1, string tag2)
+    {
+        int rand1 = 0, rand2 = 0;
+        //GameObject obj1 = null, obj2 = null;
+        GameObject[] retObjs = new GameObject[2];
+        GameObject[] tag1Objects = null;
+        GameObject[] tag2Objects = null;
+        if (tag1 == tag2)
+        {
+            tag1Objects = GameObject.FindGameObjectsWithTag(tag1);
+            tag2Objects = tag1Objects;
+        }
+        else
+        {
+            tag1Objects = GameObject.FindGameObjectsWithTag(tag1);
+            tag2Objects = GameObject.FindGameObjectsWithTag(tag2);
+        }
+
+        rand1 = Random.Range(0, tag1Objects.Length);
+        Debug.Log("rand1= " + rand1.ToString());
 
         while (rand1 == rand2)
         {
-            rand1 = Random.Range(0, 3);
-            rand2 = Random.Range(0, 3);
-            Debug.Log("rand1= " + rand1.ToString() + "rand2= " + rand2.ToString());
+            rand2 = Random.Range(0, tag1Objects.Length);
+            Debug.Log("rand1= " + rand1.ToString());
         }
 
-        var switches = GameObject.FindGameObjectsWithTag("Switch");
-        for (int i = 0; i < switches.Length; i++)
+        for (int i = 0; i < tag1Objects.Length; i++)
         {
             if (i == rand1)
             {
-                switch1 = switches[i];
-            }
-            if (i == rand2)
-            {
-                switch2 = switches[i];
+                retObjs[0] = tag1Objects[i];
             }
         }
-        //Debug.Log("switch1= " + switch1.name);
-        //Debug.Log("switch2= " + switch2.name);
+        for (int i = 0; i < tag2Objects.Length; i++)
+        {
+            if (i == rand2)
+            {
+                retObjs[1] = tag2Objects[i];
+            }
+        }
+        return retObjs;
     }
 
-    public GameObject getSwitch1()
+    public GameObject ChooseMiddleDevice(string tag)
     {
-        return switch1;
-    }
-    public GameObject getSwitch2()
-    {
-        return switch2;
-    }
+        int rand1 = 0;
+        //GameObject obj1 = null, obj2 = null;
+        GameObject retObj = null;
+        var randomObjects = GameObject.FindGameObjectsWithTag(tag);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        rand1 = Random.Range(0, randomObjects.Length);
+        Debug.Log("rand1= " + rand1.ToString());
+
+        for (int i = 0; i < randomObjects.Length; i++)
+        {
+            if (i == rand1)
+            {
+                retObj = randomObjects[i];
+            }
+
+        }
+        return retObj;
     }
 }

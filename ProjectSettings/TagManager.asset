@@ -12,6 +12,8 @@ TagManager:
   - Router
   - PlaceHolderSW
   - PlaceHolderR
+  - PlaceHolder
+  - Exit
   layers:
   - Default
   - TransparentFX
