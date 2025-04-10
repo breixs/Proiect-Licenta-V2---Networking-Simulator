@@ -166,15 +166,15 @@ public class PlayerInteract : MonoBehaviour
                     if (inputManager.onFoot.Interact.triggered && hitInfo.collider.CompareTag("SwitchPort"))
                     {
                         audioSourceConnect.PlayOneShot(audioClipConnect);
-                        pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject, hitInfo.collider.transform.parent.rotation);
+                        pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject /*hitInfo.collider.transform.parent.rotation*/);
                         isHoldingRope = false;
                         isHolding = false;
                     }
                     else if(inputManager.onFoot.Interact.triggered && hitInfo.collider.CompareTag("PanelPort"))
                     {
                         audioSourceConnect.PlayOneShot(audioClipConnect);
-                        Quaternion tempQuart= new Quaternion(0, 0, 0, 0);
-                        pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject, tempQuart);
+                        Quaternion tempQuart= new Quaternion(0, -1, 0, 0);
+                        pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject /*tempQuart*/);
                         isHoldingRope = false;
                         isHolding = false;
                     }

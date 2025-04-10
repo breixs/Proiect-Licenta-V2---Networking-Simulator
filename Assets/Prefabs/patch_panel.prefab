@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 1617658423737867225}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 875227799827589671}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 2503582698115876968}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 428830431464134411}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 3585355684281728310}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -795,7 +795,7 @@ GameObject:
   - component: {fileID: 1204612214177162706}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -964,7 +964,7 @@ GameObject:
   - component: {fileID: 5431511672183379410}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1069,7 +1069,7 @@ GameObject:
   - component: {fileID: 5142487298400788031}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1206,7 +1206,7 @@ GameObject:
   - component: {fileID: 6814112091154191508}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1311,7 +1311,7 @@ GameObject:
   - component: {fileID: 4401160519910048452}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1416,7 +1416,7 @@ GameObject:
   - component: {fileID: 3241700512537270990}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1617,7 +1617,7 @@ GameObject:
   - component: {fileID: 1666713923979166959}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1722,7 +1722,7 @@ GameObject:
   - component: {fileID: 1321290512358966702}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1827,7 +1827,7 @@ GameObject:
   - component: {fileID: 3418320361763480047}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1996,7 +1996,7 @@ GameObject:
   - component: {fileID: 1798142098816886648}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2101,7 +2101,7 @@ GameObject:
   - component: {fileID: 6765841018817249809}
   m_Layer: 0
   m_Name: EthernetPort1
-  m_TagString: SwitchPort
+  m_TagString: PanelPort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

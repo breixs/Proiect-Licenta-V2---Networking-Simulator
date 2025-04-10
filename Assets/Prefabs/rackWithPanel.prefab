@@ -8,9 +8,249 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 206868779670720878, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 206868779670720878, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 488090834016215912, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 488090834016215912, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 817917227257163394, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 817917227257163394, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013390209565033497, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013390209565033497, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016082569564219099, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016082569564219099, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065895134335240006, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065895134335240006, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334260495450974498, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334260495450974498, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534351987868020358, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534351987868020358, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850733770268805264, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850733770268805264, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150330584918283118, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150330584918283118, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686934638915842025, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686934638915842025, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257991051440736389, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257991051440736389, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284934066134483443, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284934066134483443, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 4334809066916958433, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4334809066916958433, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451416434700774779, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451416434700774779, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928628761340738780, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928628761340738780, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955661904201025909, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955661904201025909, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147875292980352864, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147875292980352864, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514189227920886351, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: EthernetPort 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514189227920886351, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514189227920886351, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024135758995614710, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6024135758995614710, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027350720434783017, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: EthernetPort 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027350720434783017, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027350720434783017, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205280969620014084, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205280969620014084, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477342209178401713, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477342209178401713, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767278821223375459, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767278821223375459, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147139450922915469, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147139450922915469, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473320904411620868, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473320904411620868, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732622487547615260, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732622487547615260, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849124374721618826, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849124374721618826, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996250075610519059, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996250075610519059, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
     - target: {fileID: 8336449283990280323, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8549411
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 8336449283990280323, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8336449283990280323, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.093858
+      value: 7.411
       objectReference: {fileID: 0}
     - target: {fileID: 8336449283990280323, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48,9 +288,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8495690763182253747, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: EthernetPort 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495690763182253747, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495690763182253747, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PanelPort
+      objectReference: {fileID: 0}
     - target: {fileID: 8717514053158470201, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
       propertyPath: m_Name
       value: rackWithPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801939192842957791, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801939192842957791, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869786561015182262, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.838
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097352248571011156, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_Name
+      value: PanelPort 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097352248571011156, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: PatchPanelPort
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
