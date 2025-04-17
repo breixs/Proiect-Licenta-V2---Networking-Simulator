@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -26,6 +21,7 @@ public class PlayerInteract : MonoBehaviour
 
     private bool isHolding = false;
     private bool isHoldingRope = false;
+    private bool isHoldingConsole = false;
     private string holdTag;
 
     GameObject[] placeHoldersSW;
@@ -59,8 +55,7 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-
-        if(playerUI != null)
+        if (playerUI != null)
             playerUI.DeactivateText();
 
         foreach (var go in placeHolders)
@@ -82,7 +77,7 @@ public class PlayerInteract : MonoBehaviour
                 isHoldingRope = false;
         }
 
-        if (Physics.Raycast(ray, out hitInfo, distance,mask))
+        if (Physics.Raycast(ray, out hitInfo, distance, mask))
         {
             if (hitInfo.collider.GetComponent<Interactable>() != null)
             {
@@ -93,15 +88,15 @@ public class PlayerInteract : MonoBehaviour
                 {
                     interactable.BaseInteract();
 
-                    if (taskScript.completed==true && hitInfo.transform.gameObject.tag=="Exit")
+                    if (taskScript.completed == true && hitInfo.transform.gameObject.tag == "Exit")
                         interactable.ConditionalInterract();
                 }
                 //ridicarea unui obiect (tasta F)
                 if (inputManager.onFoot.PickUp.triggered)
                 {
-                    if (isHolding == false) 
+                    if (isHolding == false)
                     {
-                        if (hitInfo.transform.gameObject.tag == "CanPickUp" || hitInfo.transform.gameObject.tag=="Switch" || hitInfo.transform.gameObject.tag == "Router")
+                        if (hitInfo.transform.gameObject.tag == "CanPickUp" || hitInfo.transform.gameObject.tag == "Switch" || hitInfo.transform.gameObject.tag == "Router")
                         {
                             holdTag = hitInfo.transform.gameObject.tag;
                             Debug.Log(holdTag);
@@ -117,6 +112,13 @@ public class PlayerInteract : MonoBehaviour
                             pickUpScript.PickUpObject(hitInfo.transform.gameObject);
                             pickUpScript.MoveObject();
                         }
+                        if (hitInfo.transform.gameObject.tag == "PickUpConsole")
+                        {
+                            isHolding = true;
+                            isHoldingConsole = true;
+                            pickUpScript.PickUpObject(hitInfo.transform.gameObject);
+                            pickUpScript.MoveObject();
+                        }
 
                     }
                     else
@@ -126,27 +128,17 @@ public class PlayerInteract : MonoBehaviour
                         isHolding = false;
                         if (isHoldingRope)
                             isHoldingRope = false;
+                        if (isHoldingConsole)
+                            isHoldingConsole = false;
                     }
-                    
-                }             
+
+                }
             }
             if (hitInfo.collider.CompareTag("PlaceHolderSW") || hitInfo.collider.CompareTag("PlaceHolderR"))
             {
-                if (isHolding && !isHoldingRope && holdTag == "Switch")
+                if (isHolding && !isHoldingRope && !isHoldingConsole && holdTag == "Switch")
                 {
-                    if(hitInfo.collider.CompareTag("PlaceHolderSW"))
-                        hitInfo.collider.GetComponent<MeshRenderer>().material = activ;
-
-                    if(inputManager.onFoot.Interact.triggered)
-                    {
-                        pickUpScript.SetObject(hitInfo.collider.transform.position);
-                        isHolding = false;
-                        //hitInfo.collider.transform.position
-                    }
-                }
-                else if(isHolding && !isHoldingRope && holdTag == "Router")
-                {
-                    if(hitInfo.collider.CompareTag("PlaceHolderR"))
+                    if (hitInfo.collider.CompareTag("PlaceHolderSW"))
                         hitInfo.collider.GetComponent<MeshRenderer>().material = activ;
 
                     if (inputManager.onFoot.Interact.triggered)
@@ -156,31 +148,51 @@ public class PlayerInteract : MonoBehaviour
                         //hitInfo.collider.transform.position
                     }
                 }
-                
-            }
-
-            if (hitInfo.collider.CompareTag("SwitchPort") || hitInfo.collider.CompareTag("PanelPort"))
-            {
-                if (isHoldingRope)
+                else if (isHolding && !isHoldingRope && holdTag == "Router")
                 {
-                    if (inputManager.onFoot.Interact.triggered && hitInfo.collider.CompareTag("SwitchPort"))
-                    {
-                        audioSourceConnect.PlayOneShot(audioClipConnect);
-                        pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject /*hitInfo.collider.transform.parent.rotation*/);
-                        isHoldingRope = false;
-                        isHolding = false;
-                    }
-                    else if(inputManager.onFoot.Interact.triggered && hitInfo.collider.CompareTag("PanelPort"))
-                    {
-                        audioSourceConnect.PlayOneShot(audioClipConnect);
-                        Quaternion tempQuart= new Quaternion(0, -1, 0, 0);
-                        pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject /*tempQuart*/);
-                        isHoldingRope = false;
-                        isHolding = false;
-                    }
+                    if (hitInfo.collider.CompareTag("PlaceHolderR"))
+                        hitInfo.collider.GetComponent<MeshRenderer>().material = activ;
 
+                    if (inputManager.onFoot.Interact.triggered)
+                    {
+                        pickUpScript.SetObject(hitInfo.collider.transform.position);
+                        isHolding = false;
+                        //hitInfo.collider.transform.position
+                    }
                 }
 
+            }
+
+            if ((isHoldingRope || isHoldingConsole) && (hitInfo.collider.CompareTag("SwitchPort") || hitInfo.collider.CompareTag("ConsolePort") || hitInfo.collider.CompareTag("LaptopPort")))
+            {
+                if (isHoldingRope && inputManager.onFoot.Interact.triggered && (hitInfo.collider.CompareTag("SwitchPort")))
+                {
+                    audioSourceConnect.PlayOneShot(audioClipConnect);
+                    pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject, new Vector3(0, -90, 0));
+                    isHoldingRope = false;
+                    isHolding = false;
+                }
+                else if (isHoldingConsole && inputManager.onFoot.Interact.triggered && hitInfo.collider.CompareTag("LaptopPort"))
+                {
+                    audioSourceConnect.PlayOneShot(audioClipConnect);
+                    pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject, new Vector3(0, 45, 0));
+                    isHoldingConsole = false;
+                    isHolding = false;
+                }
+                else if (isHoldingConsole && inputManager.onFoot.Interact.triggered && (hitInfo.collider.CompareTag("ConsolePort")))
+                {
+                    audioSourceConnect.PlayOneShot(audioClipConnect);
+                    pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject, new Vector3(0, -90, 0));
+                    isHoldingRope = false;
+                    isHolding = false;
+                }
+                //else if (inputManager.onFoot.Interact.triggered && hitInfo.collider.CompareTag("Laptop"))
+                //{
+                //    audioSourceConnect.PlayOneShot(audioClipConnect);
+                //    pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject /*hitInfo.collider.transform.parent.rotation*/);
+                //    isHoldingRope = false;
+                //    isHolding = false;
+                //}
             }
         }
     }

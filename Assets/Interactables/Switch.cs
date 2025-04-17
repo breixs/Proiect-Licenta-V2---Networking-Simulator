@@ -6,6 +6,7 @@ using UnityEngine;
 public class Switch : Interactable
 {
     public TextMeshProUGUI nameText;
+    private string ipAddress;
     void Start()
     {
         nameText.text=gameObject.name;
@@ -18,11 +19,15 @@ public class Switch : Interactable
     }
     protected override void Interact()
     {
-        Debug.Log("interacted with " + gameObject.name);
+        Debug.Log("interacted with " + gameObject.name + "ip address: " + ipAddress);
         //PickUpScript pickUpScript = gameObject.GetComponent<PickUpScript>();
         
         //pickUpScript.PickUpObject(gameObject);
 
         
+    }
+    public void setIpAddress(string ip)
+    {
+        ipAddress = ip;
     }
 }

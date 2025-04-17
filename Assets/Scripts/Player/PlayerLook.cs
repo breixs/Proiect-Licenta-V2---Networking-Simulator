@@ -11,7 +11,7 @@ public class PlayerLook : MonoBehaviour
     
     public void ProcessLook(Vector2 input)
     {
-        if (!PlayerUI.paused && !PlayerUI.notebookState)
+        if (!PlayerUI.paused && !PlayerUI.notebookState && !PlayerUI.inTerminal)
         {
             float mouseX = input.x;
             float mouseY = input.y;

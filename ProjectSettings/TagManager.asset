@@ -17,6 +17,10 @@ TagManager:
   - PanelPort
   - PatchPanelPort
   - Laptop
+  - LaptopPort
+  - ConsolePort
+  - PickUpConsole
+  - ConsoleCableParent
   layers:
   - Default
   - TransparentFX

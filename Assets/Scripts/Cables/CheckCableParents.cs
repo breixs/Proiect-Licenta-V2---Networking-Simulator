@@ -11,6 +11,9 @@ public class CheckCableParents : MonoBehaviour
     private GameObject[] startNodes;
     private GameObject[] endNodes;
     private GameObject[] cables;
+    public GameObject consoleCable;
+    private GameObject consoleStartNode;
+    private GameObject consoleEndNode;
 
     private Dictionary<GameObject, List<GameObject>> switchConnections;
 
@@ -23,6 +26,9 @@ public class CheckCableParents : MonoBehaviour
 
     void Start()
     {
+        consoleStartNode = consoleCable.transform.GetChild(0).gameObject;
+        consoleEndNode=consoleCable.transform.GetChild(1).gameObject;
+
         cables = new GameObject[CableManager.gameObject.transform.childCount - 1];
         for (int i = 0; i < cables.Length; i++)
         {
@@ -40,11 +46,6 @@ public class CheckCableParents : MonoBehaviour
         }
 
         switchConnections = new Dictionary<GameObject, List<GameObject>>();
-    }
-
-    void Update()
-    {
-        
     }
 
     public bool CheckParents(GameObject obj1, GameObject obj2, GameObject midObj=null)
@@ -130,5 +131,14 @@ public class CheckCableParents : MonoBehaviour
         }
 
         return false;
+    }
+
+    public GameObject getConsoleStartNodeParent()
+    {
+        return consoleStartNode.transform.parent.gameObject;
+    }
+    public GameObject getConsoleEndNodeParent()
+    {
+        return consoleEndNode.transform.parent.gameObject;
     }
 }

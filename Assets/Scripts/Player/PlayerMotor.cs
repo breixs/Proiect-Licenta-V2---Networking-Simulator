@@ -48,7 +48,7 @@ public class PlayerMotor : MonoBehaviour
     //preia inputurile din InputManager si le trimite la characther controller
     public void ProcessMove(Vector2 input)
     {
-        if(!PlayerUI.paused && !PlayerUI.notebookState)
+        if(!PlayerUI.paused && !PlayerUI.notebookState && !PlayerUI.inTerminal)
         {
             Vector3 moveDirection = Vector3.zero;
             moveDirection.x = input.x;

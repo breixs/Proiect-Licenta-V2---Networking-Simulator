@@ -12,9 +12,11 @@ public class PlayerUI : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject notebookMenu;
     public GameObject endMenu;
+    public GameObject terminal;
     private InputManager inputManager;
     public static bool paused = false;
     public static bool notebookState = false;
+    public static bool inTerminal = false;
 
     void Start()
     {
@@ -27,7 +29,7 @@ public class PlayerUI : MonoBehaviour
     }
     private void Update()
     {
-        if (inputManager.onFoot.Pause.triggered && !notebookState)
+        if (inputManager.onFoot.Pause.triggered && !notebookState && !inTerminal)
         {
             if (!paused)
             {
@@ -44,6 +46,12 @@ public class PlayerUI : MonoBehaviour
         {
             notebookState = !notebookState;
             OpenNotebook(notebookState);
+        }
+        if(inputManager.onFoot.Pause.triggered && inTerminal)
+        {
+            terminal.SetActive(false);
+            inTerminal = false;
+            Cursor.visible = false;
         }
     }
     public void UpdateText(string promptMessage)
