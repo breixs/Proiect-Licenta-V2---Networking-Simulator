@@ -14,6 +14,7 @@ public class TerminalManager : MonoBehaviour
     public ScrollRect sr;
     public GameObject msgList;
     //public TextMeshPro deviceText;
+    private string userInput;
 
     //public GameObject laptop;
     //private GameObject connectedDevice;
@@ -50,11 +51,16 @@ public class TerminalManager : MonoBehaviour
 
     private void OnGUI()
     {
+        //preia comanda trecuta si o copiaza in input text box
+        if (userInputLine != null && Input.GetKeyDown(KeyCode.UpArrow) && terminalInput.text == "")
+        {
+            terminalInput.text = userInput;
+        }
 
         if (terminalInput.isFocused && terminalInput.text != "" && Input.GetKeyDown(KeyCode.Return))
         {
 
-            string userInput = terminalInput.text;
+            userInput = terminalInput.text;
 
             ClearInputField();
 

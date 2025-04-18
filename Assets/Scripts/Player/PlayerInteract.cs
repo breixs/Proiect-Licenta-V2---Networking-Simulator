@@ -183,7 +183,7 @@ public class PlayerInteract : MonoBehaviour
                 {
                     audioSourceConnect.PlayOneShot(audioClipConnect);
                     pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject, new Vector3(0, -90, 0));
-                    isHoldingRope = false;
+                    isHoldingConsole = false;
                     isHolding = false;
                 }
                 //else if (inputManager.onFoot.Interact.triggered && hitInfo.collider.CompareTag("Laptop"))
