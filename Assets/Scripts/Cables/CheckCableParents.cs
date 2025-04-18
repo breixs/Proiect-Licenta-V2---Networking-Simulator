@@ -48,7 +48,7 @@ public class CheckCableParents : MonoBehaviour
         switchConnections = new Dictionary<GameObject, List<GameObject>>();
     }
 
-    public bool CheckParents(GameObject obj1, GameObject obj2, GameObject midObj=null)
+    public bool CheckParents(GameObject obj1, GameObject obj2, GameObject midObj=null, int vlanID=0, string ipAddress=null)
     {
         switchConnections.Clear();
         bool isConnected=false;

@@ -1163,11 +1163,11 @@ RectTransform:
   m_Children:
   - {fileID: 754034582}
   - {fileID: 299595639}
-  - {fileID: 1993838162}
   - {fileID: 563741373}
   - {fileID: 1926753672}
   - {fileID: 1584045230}
   - {fileID: 291017979}
+  - {fileID: 1993838162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9398,7 +9398,7 @@ GameObject:
   - component: {fileID: 1993838164}
   - component: {fileID: 1993838163}
   m_Layer: 5
-  m_Name: Image
+  m_Name: TaskBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

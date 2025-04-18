@@ -46,4 +46,9 @@ public class Switch : Interactable
     {
         return vlanIp.ContainsKey(vlanId);
     }
+
+    public bool ContainsIp(int vlanId, string ip)
+    {
+        return vlanIp[vlanId].Equals(ip);
+    }
 }
