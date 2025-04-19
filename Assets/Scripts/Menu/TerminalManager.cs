@@ -126,7 +126,7 @@ public class TerminalManager : MonoBehaviour
 
     void ScrollToBottom(int lines)
     {
-        if(lines>4)
+        if(lines>3)
         {
             sr.velocity = new Vector2(0, 450);
         }
@@ -136,10 +136,27 @@ public class TerminalManager : MonoBehaviour
         }
     }
 
-    //private void CloseTerminal()
-    //{
-    //    gameObject.SetActive(false);
-    //    PlayerUI.inTerminal = false;
-    //    Cursor.visible = false;
-    //}
+    public void ClearTerminal()
+    {
+        foreach (Transform child in msgList.transform)
+        {
+            // Skip the input line and any object that isn't a clone
+            if (child.gameObject == userInputLine ||
+                !child.name.Contains("(Clone)")) // Only delete clones
+            {
+                continue;
+            }
+
+            Destroy(child.gameObject);
+        }
+
+        // Reset scroll height
+        msgList.GetComponent<RectTransform>().sizeDelta = new Vector2(
+            msgList.GetComponent<RectTransform>().sizeDelta.x,
+            0f
+        );
+
+        // Scroll to top
+        sr.verticalNormalizedPosition = 1f;
+    }
 }

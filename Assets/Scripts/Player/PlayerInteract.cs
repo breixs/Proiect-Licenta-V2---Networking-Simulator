@@ -73,8 +73,8 @@ public class PlayerInteract : MonoBehaviour
             pickUpScript.StopClipping();
             pickUpScript.DropObject(false, null);
             isHolding = false;
-            if (isHoldingRope)
-                isHoldingRope = false;
+            isHoldingRope = false;
+            isHoldingConsole = false;
         }
 
         if (Physics.Raycast(ray, out hitInfo, distance, mask))
@@ -126,10 +126,8 @@ public class PlayerInteract : MonoBehaviour
                         pickUpScript.StopClipping();
                         pickUpScript.DropObject(false, null);
                         isHolding = false;
-                        if (isHoldingRope)
-                            isHoldingRope = false;
-                        if (isHoldingConsole)
-                            isHoldingConsole = false;
+                        isHoldingRope = false;
+                        isHoldingConsole = false;
                     }
 
                 }
@@ -148,7 +146,7 @@ public class PlayerInteract : MonoBehaviour
                         //hitInfo.collider.transform.position
                     }
                 }
-                else if (isHolding && !isHoldingRope && holdTag == "Router")
+                else if (isHolding && !isHoldingRope && !isHoldingConsole && holdTag == "Router")
                 {
                     if (hitInfo.collider.CompareTag("PlaceHolderR"))
                         hitInfo.collider.GetComponent<MeshRenderer>().material = activ;
@@ -163,9 +161,9 @@ public class PlayerInteract : MonoBehaviour
 
             }
 
-            if ((isHoldingRope || isHoldingConsole) && (hitInfo.collider.CompareTag("SwitchPort") || hitInfo.collider.CompareTag("ConsolePort") || hitInfo.collider.CompareTag("LaptopPort")))
+            if ((isHoldingRope || isHoldingConsole) && (hitInfo.collider.CompareTag("SwitchPort") || hitInfo.collider.CompareTag("ConsolePort") || hitInfo.collider.CompareTag("LaptopPort") || hitInfo.collider.CompareTag("PanelPort")))
             {
-                if (isHoldingRope && inputManager.onFoot.Interact.triggered && (hitInfo.collider.CompareTag("SwitchPort")))
+                if (isHoldingRope && inputManager.onFoot.Interact.triggered && (hitInfo.collider.CompareTag("SwitchPort") || hitInfo.collider.CompareTag("PanelPort")))
                 {
                     audioSourceConnect.PlayOneShot(audioClipConnect);
                     pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject, new Vector3(0, -90, 0));

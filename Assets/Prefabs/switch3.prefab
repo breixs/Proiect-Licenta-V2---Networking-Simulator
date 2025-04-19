@@ -1901,3 +1901,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promoptMessage: 'F : Pick Up'
   nameText: {fileID: 3531982279552000817}
+  deviceInfo: {fileID: 0}
+  infoPanel: {fileID: 0}

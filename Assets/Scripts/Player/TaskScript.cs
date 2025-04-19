@@ -27,7 +27,7 @@ public class TaskScript : MonoBehaviour
         playerUI=GetComponent<PlayerUI>();
         vlanId = Random.Range(1, 9) * 10;
         Debug.Log(vlanId);
-        prefix=Random.Range(16, 32);
+        prefix=Random.Range(16, 26);
         subnetMask= SubentMaskGenerator(prefix);
         Debug.Log("prefix= " + prefix + " mask= "+subnetMask);
 
@@ -95,7 +95,7 @@ public class TaskScript : MonoBehaviour
 
     private bool Level2Task()
     {
-        string taskText;
+        string taskText = null;
 
         if (endDevices == null)
         {
@@ -103,10 +103,11 @@ public class TaskScript : MonoBehaviour
             endDevice1 = endDevices[0];
             endDevice2 = endDevices[1];
             middleDevice = ChooseCableParents.instance.ChooseMiddleDevice("Switch");
+            taskText = "Connect " + endDevice1.name + " with " + endDevice2.name + " using " + middleDevice.name + '\n' + '\n' + middleDevice.name + " ip adress = " + ipAdress + "/" + prefix.ToString();
+            playerUI.UpdateTaskText(taskText);
         }
-        taskText = "Connect " + endDevice1.name + " with " + endDevice2.name + " using " + middleDevice.name + '\n' + '\n' + middleDevice.name + " ip adress = " + ipAdress + "/" + prefix.ToString();
-        playerUI.UpdateTaskText(taskText);
-        isConnected = CheckCableParents.instance.CheckParents(endDevice1, endDevice2, middleDevice);
+       
+        isConnected = CheckCableParents.instance.CheckParents(endDevice1, endDevice2, middleDevice, vlanId, ipAdressWithMask);
 
         if (isConnected)
         {

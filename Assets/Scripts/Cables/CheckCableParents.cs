@@ -52,6 +52,15 @@ public class CheckCableParents : MonoBehaviour
     {
         switchConnections.Clear();
         bool isConnected=false;
+        bool correctIP;
+        if(vlanID==0 && ipAddress==null)
+        {
+            correctIP = true;
+        }
+        else
+        {
+            correctIP=false;
+        }
 
         for (int i = 0; i < cables.Length; i++)
         {
@@ -85,10 +94,25 @@ public class CheckCableParents : MonoBehaviour
             bool connectedEnd = BFS(midObj, obj2);
 
             if (connectedStart && connectedEnd)
+            {
                 isConnected = true;
+                if(midObj.GetComponent<Switch>() && vlanID>0 && ipAddress!=null)
+                {
+                    if (midObj.GetComponent<Switch>().ContainsVlan(vlanID))
+                    {
+                        if (midObj.GetComponent<Switch>().ContainsIp(vlanID, ipAddress))
+                        {
+                            correctIP = true;
+                        }
+                    }
+                }
+            }
         }
 
-        if (isConnected)
+        Debug.Log("is connected: "+ isConnected);
+        Debug.Log("correct ip: "+ correctIP);
+
+        if (isConnected && correctIP)
         {
             return true;
         }
