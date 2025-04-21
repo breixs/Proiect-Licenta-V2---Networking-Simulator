@@ -137,25 +137,29 @@ public class PlayerInteract : MonoBehaviour
                 if (isHolding && !isHoldingRope && !isHoldingConsole && holdTag == "Switch")
                 {
                     if (hitInfo.collider.CompareTag("PlaceHolderSW"))
+                    {
                         hitInfo.collider.GetComponent<MeshRenderer>().material = activ;
 
-                    if (inputManager.onFoot.Interact.triggered)
-                    {
-                        pickUpScript.SetObject(hitInfo.collider.transform.position);
-                        isHolding = false;
-                        //hitInfo.collider.transform.position
+                        if (inputManager.onFoot.Interact.triggered)
+                        {
+                            pickUpScript.SetObject(hitInfo.collider.transform.position);
+                            isHolding = false;
+                            //hitInfo.collider.transform.position
+                        }
                     }
                 }
                 else if (isHolding && !isHoldingRope && !isHoldingConsole && holdTag == "Router")
                 {
                     if (hitInfo.collider.CompareTag("PlaceHolderR"))
+                    {
                         hitInfo.collider.GetComponent<MeshRenderer>().material = activ;
 
-                    if (inputManager.onFoot.Interact.triggered)
-                    {
-                        pickUpScript.SetObject(hitInfo.collider.transform.position);
-                        isHolding = false;
-                        //hitInfo.collider.transform.position
+                        if (inputManager.onFoot.Interact.triggered)
+                        {
+                            pickUpScript.SetObject(hitInfo.collider.transform.position);
+                            isHolding = false;
+                            //hitInfo.collider.transform.position
+                        }
                     }
                 }
 

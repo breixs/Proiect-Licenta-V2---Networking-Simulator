@@ -9,6 +9,7 @@ public class PlayerUI : MonoBehaviour
 {
     public TextMeshProUGUI promptText;
     public TextMeshProUGUI taskText;
+    public TextMeshProUGUI alertText;
     public GameObject pauseMenu;
     public GameObject notebookMenu;
     public GameObject endMenu;
@@ -23,7 +24,7 @@ public class PlayerUI : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         pauseMenu.SetActive(false);
         notebookMenu.SetActive(false);
-        endMenu.SetActive(false) ;
+        endMenu.SetActive(false);
         promptText.gameObject.SetActive(false);
         Time.timeScale = 1f;
     }
