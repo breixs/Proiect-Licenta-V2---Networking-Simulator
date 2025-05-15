@@ -47,12 +47,12 @@ public class TaskScript : MonoBehaviour
             if(currentScene.name=="Level_3")
             {
                 vlanIdNet2 = Random.Range(1, 9) * 10;
-                Debug.Log(vlanId);
+                Debug.Log(vlanIdNet2);
                 prefixNet2 = Random.Range(16, 26);
                 subnetMaskNet2 = SubentMaskGenerator(prefixNet2);
                 Debug.Log("prefix2= " + prefixNet2 + " mask2= " + subnetMaskNet2);
 
-                ipAdressNet2 = "192.168." + vlanId.ToString() + "." + Random.Range(2, 100).ToString();
+                ipAdressNet2 = "192.168." + vlanIdNet2.ToString() + "." + Random.Range(2, 100).ToString();
                 ipAdressWithMaskNet2 = ipAdressNet2 + " " + subnetMaskNet2;
                 Debug.Log("ipAdress 2: "+ipAdressWithMaskNet2);
             }
@@ -171,6 +171,7 @@ public class TaskScript : MonoBehaviour
         string taskText = null;
         bool isConnected1 = false;
         bool isConnected2 = false;
+        bool isConnected3 = false;
         bool taskCompleted = false;
 
         if (endDevices == null)
@@ -184,7 +185,7 @@ public class TaskScript : MonoBehaviour
                 endDevice1Net2 = endDevicesNet2[0];
                 endDevice2Net2 = endDevicesNet2[1];
                 middleDeviceNet2 = ChooseCableParents.instance.ChooseMiddleDevice("Switch");
-            }while(endDevices.Equals(endDevicesNet2));
+            }while(endDevice1.Equals(endDevice1Net2) || middleDevice.Equals(middleDeviceNet2));
             taskText = "Connect " + endDevice1.name + " with " + endDevice2.name + " using " + middleDevice.name + '\n' + '\n'
                 + middleDevice.name + " ip adress = " + ipAdress + "/" + prefix.ToString() + '\n' + '\n'
                 + "Connect " + endDevice1Net2.name + " with " + endDevice2Net2.name + " using " + middleDeviceNet2.name + '\n' + '\n'
@@ -192,18 +193,27 @@ public class TaskScript : MonoBehaviour
             playerUI.UpdateTaskText(taskText);
         }
 
-        isConnected1 = CheckCableParents.instance.CheckParents(endDevice1, endDevice2, middleDevice, vlanId, ipAdressWithMask);
-        isConnected2= CheckCableParents.instance.CheckParents(endDevice1Net2, endDevice2Net2, middleDeviceNet2, vlanId, ipAdressWithMaskNet2);
-        Debug.Log("TASK3 CONNECTED: " + isConnected1 + isConnected2);
+       
+         isConnected1 = CheckCableParents.instance.CheckParents(endDevice1, endDevice2, middleDevice, vlanId, ipAdressWithMask);
+         isConnected2 = CheckCableParents.instance.CheckParents(endDevice1Net2, endDevice2Net2, middleDeviceNet2, vlanIdNet2, ipAdressWithMaskNet2);
+   
+        if (endDevice2.Equals(endDevice2Net2))
+            isConnected3 = true;
+        else
+        {
+            isConnected3=CheckCableParents.instance.CheckParents(endDevice2, endDevice2Net2);
+        }
 
-        if (isConnected1 && isConnected2)
+        Debug.Log("TASK3 CONNECTED: " + isConnected1 + isConnected2 + isConnected3);
+
+        if (isConnected1 && isConnected2 && isConnected3)
         {
             taskCompleted = true;
             playerUI.UpdateTaskText("TASK COMPLETED");
             return true;
 
         }
-        else if ((!isConnected1 || !isConnected2) && taskCompleted)
+        else if ((!isConnected1 || !isConnected2 || !isConnected3) && taskCompleted)
         {
             taskCompleted = false;
             taskText = "Connect " + endDevice1.name + " with " + endDevice2.name + " using " + middleDevice.name + '\n' + '\n'

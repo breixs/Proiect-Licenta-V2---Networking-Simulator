@@ -12,7 +12,7 @@ public class TerminalManager : MonoBehaviour
     public TMP_InputField terminalInput;
     public GameObject userInputLine;
     public ScrollRect sr;
-    public GameObject msgList;
+    public GameObject commandLineContainer;
     //public TextMeshPro deviceText;
     private string userInput;
 
@@ -28,26 +28,11 @@ public class TerminalManager : MonoBehaviour
         interpreter=GetComponent<Interpreter>();
     }
 
-    //private void OnEnable()
-    //{
-    //    if (laptop.transform.childCount > 1)
-    //    {
-    //        deviceText.text = laptop.transform.GetChild(1).name;
-    //        connectedDevice = CheckCableParents.instance.getConsoleStartNodeParent();
-    //        if (connectedDevice == null)
-    //        {
-    //            connectedDevice = CheckCableParents.instance.getConsoleEndNodeParent();
-    //            if (connectedDevice == null)
-    //            {
-    //                CloseTerminal();
-    //            }
-    //        }
-    //    }
-    //    else
-    //    {
-    //        CloseTerminal();
-    //    }
-    //}
+    private void OnEnable()
+    {
+        commandLineContainer.GetComponent<RectTransform>().sizeDelta = new Vector2(1772f, 867f);
+        sr.verticalNormalizedPosition = 1f;
+    }
 
     private void OnGUI()
     {
@@ -97,12 +82,12 @@ public class TerminalManager : MonoBehaviour
     {
         directoryLine.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = interpreter.deviceText.text;
 
-        Vector2 msgListSize = msgList.GetComponent<RectTransform>().sizeDelta;
-        msgList.GetComponent<RectTransform>().sizeDelta = new Vector2(msgListSize.x, msgListSize.y + 35.0f);
+        Vector2 msgListSize = commandLineContainer.GetComponent<RectTransform>().sizeDelta;
+        commandLineContainer.GetComponent<RectTransform>().sizeDelta = new Vector2(msgListSize.x, msgListSize.y + 35.0f);
 
-        GameObject msg = Instantiate(directoryLine, msgList.transform);
+        GameObject msg = Instantiate(directoryLine, commandLineContainer.transform);
 
-        msg.transform.SetSiblingIndex(msgList.transform.childCount - 1);
+        msg.transform.SetSiblingIndex(commandLineContainer.transform.childCount - 1);
 
         msg.GetComponentsInChildren<TextMeshProUGUI>()[1].text = userInput;
     }
@@ -111,12 +96,12 @@ public class TerminalManager : MonoBehaviour
     {
         for(int i=0;i<interpretation.Count;i++)
         {
-            GameObject resp = Instantiate(responseLine, msgList.transform);
+            GameObject resp = Instantiate(responseLine, commandLineContainer.transform);
 
             resp.transform.SetAsLastSibling();
 
-            Vector2 listSize=msgList.GetComponent<RectTransform>().sizeDelta;
-            msgList.GetComponent<RectTransform>().sizeDelta= new Vector2(listSize.x, listSize.y + 35.0f);
+            Vector2 listSize=commandLineContainer.GetComponent<RectTransform>().sizeDelta;
+            commandLineContainer.GetComponent<RectTransform>().sizeDelta= new Vector2(listSize.x, listSize.y + 35.0f);
             resp.GetComponentInChildren<TextMeshProUGUI>().text = interpretation[i];
 
 
@@ -138,7 +123,7 @@ public class TerminalManager : MonoBehaviour
 
     public void ClearTerminal()
     {
-        foreach (Transform child in msgList.transform)
+        foreach (Transform child in commandLineContainer.transform)
         {
             // Skip the input line and any object that isn't a clone
             if (child.gameObject == userInputLine ||
@@ -151,8 +136,8 @@ public class TerminalManager : MonoBehaviour
         }
 
         // Reset scroll height
-        msgList.GetComponent<RectTransform>().sizeDelta = new Vector2(
-            msgList.GetComponent<RectTransform>().sizeDelta.x,
+        commandLineContainer.GetComponent<RectTransform>().sizeDelta = new Vector2(
+            commandLineContainer.GetComponent<RectTransform>().sizeDelta.x,
             0f
         );
 

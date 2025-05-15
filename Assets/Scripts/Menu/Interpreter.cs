@@ -52,9 +52,9 @@ public class Interpreter : MonoBehaviour
                 terminalEnabled = false;
                 configureTerminal = false;
                 inInterface = false;
-                deviceText.text = connectedDevice.transform.name + ">";
+                deviceText.text = newConnectedDevice.transform.name + ">";
                 deviceText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200f);
-                sampleDeviceText.text = connectedDevice.transform.name + ">";
+                sampleDeviceText.text = newConnectedDevice.transform.name + ">";
                 sampleDeviceText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200f);
             }
 
