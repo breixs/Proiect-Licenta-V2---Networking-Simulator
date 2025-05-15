@@ -32,7 +32,7 @@ public class TaskScript : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         playerUI =GetComponent<PlayerUI>();
 
-        if (currentScene.name == "Level_2" || currentScene.name=="Level_3")
+        if (currentScene.name == "Level_2" || currentScene.name=="Level_3" || currentScene.name.Equals("Repeatable_level"))
         {
             vlanId = Random.Range(1, 9) * 10;
             Debug.Log(vlanId);
@@ -44,7 +44,7 @@ public class TaskScript : MonoBehaviour
             ipAdressWithMask = ipAdress + " " + subnetMask;
             Debug.Log("ipAdress 1: "+ipAdressWithMask);
 
-            if(currentScene.name=="Level_3")
+            if(currentScene.name=="Level_3" || currentScene.name.Equals("Repeatable_level"))
             {
                 vlanIdNet2 = Random.Range(1, 9) * 10;
                 Debug.Log(vlanIdNet2);
@@ -84,7 +84,7 @@ public class TaskScript : MonoBehaviour
                 completed = false;
             }
         }
-        if (currentScene.name == "Level_3")
+        if (currentScene.name == "Level_3" || currentScene.name.Equals("Repeatable_level"))
         {
             if (Level3Task())
             {

@@ -7,11 +7,6 @@ public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI timerTxt;
     private float elapsedTime;
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         elapsedTime+=Time.deltaTime;

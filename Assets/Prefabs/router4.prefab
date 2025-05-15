@@ -1195,19 +1195,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef96297151e932b48a091cf8d0767fdd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.922
+      value: 8.61
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef96297151e932b48a091cf8d0767fdd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.868
+      value: 0.626
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef96297151e932b48a091cf8d0767fdd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.88
+      value: 4.2761216
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef96297151e932b48a091cf8d0767fdd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef96297151e932b48a091cf8d0767fdd, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1215,7 +1215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef96297151e932b48a091cf8d0767fdd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ef96297151e932b48a091cf8d0767fdd, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1361,3 +1361,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promoptMessage: 'F : Pick Up Router'
   nameText: {fileID: 5342351794491331128}
+  deviceInfo: {fileID: 0}
+  infoPanel: {fileID: 0}

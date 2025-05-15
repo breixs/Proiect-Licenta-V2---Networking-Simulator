@@ -21,6 +21,8 @@ TagManager:
   - ConsolePort
   - PickUpConsole
   - ConsoleCableParent
+  - Coffee
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
