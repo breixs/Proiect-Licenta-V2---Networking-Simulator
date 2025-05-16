@@ -23,6 +23,8 @@ TagManager:
   - ConsoleCableParent
   - Coffee
   - SpawnPoint
+  - SpawnSwitch
+  - SpawnRouter
   layers:
   - Default
   - TransparentFX

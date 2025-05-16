@@ -1329,7 +1329,7 @@ MonoBehaviour:
   terminalInput: {fileID: 1544100598}
   userInputLine: {fileID: 423553281}
   sr: {fileID: 220791313}
-  msgList: {fileID: 1932963418}
+  commandLineContainer: {fileID: 1932963418}
 --- !u!114 &291017983
 MonoBehaviour:
   m_ObjectHideFlags: 0

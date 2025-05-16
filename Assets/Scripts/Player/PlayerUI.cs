@@ -10,6 +10,7 @@ public class PlayerUI : MonoBehaviour
     public TextMeshProUGUI promptText;
     public TextMeshProUGUI taskText;
     public TextMeshProUGUI alertText;
+
     public GameObject pauseMenu;
     public GameObject notebookMenu;
     public GameObject endMenu;

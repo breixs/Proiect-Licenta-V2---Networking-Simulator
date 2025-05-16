@@ -95,12 +95,15 @@ public class TaskScript : MonoBehaviour
                 completed = false;
             }
         }
+        if(currentScene.name=="Sandbox")
+        {
+            completed = true;
+        }
     }
 
     private bool Level1Task()
     {
         bool isConnected = false;
-        bool taskCompleted = false;
 
         if (endDevices == null)
         {
@@ -114,18 +117,15 @@ public class TaskScript : MonoBehaviour
 
         if(isConnected)
         {
-            taskCompleted = true;
             playerUI.UpdateTaskText("TASK COMPLETED");
             return true;
             
         }
-        else if (!isConnected && taskCompleted)
+        else
         {
-            taskCompleted = false;
             playerUI.UpdateTaskText("Connect " + endDevice1.name + " with "+ endDevice2.name);
             return false;
         }
-        return false;
         
     }
 
@@ -133,7 +133,7 @@ public class TaskScript : MonoBehaviour
     {
         string taskText = null;
         bool isConnected = false;
-        bool taskCompleted = false;
+        //bool taskCompleted = false;
 
         if (endDevices == null)
         {
@@ -151,19 +151,18 @@ public class TaskScript : MonoBehaviour
 
         if (isConnected)
         {
-            taskCompleted = true;
+            //taskCompleted = true;
             playerUI.UpdateTaskText("TASK COMPLETED");
             return true;
 
         }
-        else if (!isConnected && taskCompleted)
+        else
         {
-            taskCompleted = false;
+            //taskCompleted = false;
             taskText = "Connect " + endDevice1.name + " with " + endDevice2.name + " using " + middleDevice.name + '\n' + '\n' + middleDevice.name + " ip adress = " + ipAdress + "/" + prefix.ToString();
             playerUI.UpdateTaskText(taskText);
             return false;
         }
-        return false;
     }
 
     private bool Level3Task()
@@ -172,7 +171,6 @@ public class TaskScript : MonoBehaviour
         bool isConnected1 = false;
         bool isConnected2 = false;
         bool isConnected3 = false;
-        bool taskCompleted = false;
 
         if (endDevices == null)
         {
@@ -208,14 +206,12 @@ public class TaskScript : MonoBehaviour
 
         if (isConnected1 && isConnected2 && isConnected3)
         {
-            taskCompleted = true;
             playerUI.UpdateTaskText("TASK COMPLETED");
             return true;
 
         }
-        else if ((!isConnected1 || !isConnected2 || !isConnected3) && taskCompleted)
+        else
         {
-            taskCompleted = false;
             taskText = "Connect " + endDevice1.name + " with " + endDevice2.name + " using " + middleDevice.name + '\n' + '\n'
                 + middleDevice.name + " ip adress = " + ipAdress + "/" + prefix.ToString() + '\n' + '\n'
                 + "Connect " + endDevice1Net2.name + " with " + endDevice2Net2.name + " using " + middleDeviceNet2.name + '\n' +'n'
@@ -223,7 +219,7 @@ public class TaskScript : MonoBehaviour
             playerUI.UpdateTaskText(taskText);
             return false;
         }
-        return false;
+       
     }
 
     private string SubentMaskGenerator(int prefix)
