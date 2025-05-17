@@ -89,18 +89,6 @@ public class Interpreter : MonoBehaviour
 
         string[] arguments = userInput.Split(" ");
 
-        //if (arguments[0]=="help")
-        //{
-        //    response.Add("Commands available:");
-        //    response.Add("enable");
-        //    return response;
-        //}
-        //else
-        //{
-        //    response.Add("Unknown command. Type help for a list of commands");
-        //    return response;
-        //}
-
         switch(arguments[0])
         {
             case "help":
@@ -115,6 +103,7 @@ public class Interpreter : MonoBehaviour
                 {
                     response.Add("Commands available:");
                     response.Add("configure terminal");
+                    response.Add("ping 'ip address'");
                     response.Add("show vlan");
                     response.Add("exit");
                     return response;
@@ -244,6 +233,74 @@ public class Interpreter : MonoBehaviour
                 {
                     connectedDevice.name = arguments[1];
                     response.Add("Changed hostname");
+                    return response;
+                }
+                else
+                {
+                    response.Add("Invalid Command");
+                    return response;
+                }
+            case "ping":
+                if(terminalEnabled && !configureTerminal && arguments.Length==2 && arguments[1]!=string.Empty)
+                {
+                    bool isConnected=false;
+                    string ip=null;
+                    var switches = GameObject.FindGameObjectsWithTag("Switch");
+
+                    var ipInfos=arguments[1].Split('.');
+
+                    int vlanFromIp = int.Parse(ipInfos[2]);
+
+                    for (int i=0; i<switches.Length; i++)
+                    {
+                        if (switches[i].GetComponent<Switch>().ContainsVlan(vlanFromIp) && deviceScript.ContainsVlan(vlanFromIp))
+                        {
+                            var ips = switches[i].GetComponent<Switch>().GetIpAdress(vlanFromIp).Split(' ');
+                            ip = ips[0];
+                            if (ip == arguments[1] && CheckCableParents.instance.CheckParents(connectedDevice, switches[i]))
+                            {
+                                isConnected = true;
+                            }
+                        }
+                        else if(switches[i].GetComponent<Switch>().ContainsVlan(vlanFromIp) && !deviceScript.ContainsVlan(vlanFromIp))
+                        {
+                            var routers = GameObject.FindGameObjectsWithTag("Router");
+                            GameObject router1=null;
+                            GameObject router2=null;
+
+                            foreach (var router in routers)
+                            {
+                                if(CheckCableParents.instance.CheckParents(connectedDevice, router))
+                                {
+                                    router1=router;
+                                }
+                                if (CheckCableParents.instance.CheckParents(switches[i], router))
+                                {
+                                    router2 = router;
+                                }
+                            }
+                            if (router1!=null && router2!=null && (router1.Equals(router2) || CheckCableParents.instance.CheckParents(router1, router2)))
+                            {
+                                isConnected = true;
+                            }
+                        }
+                    }
+
+                    if(isConnected)
+                    {
+                        response.Add("Reply from " + ip + " bytes=32 time=1ms TTL=64");
+                        response.Add("Reply from " + ip + " bytes=32 time=1ms TTL=64");
+                        response.Add("Reply from " + ip + " bytes=32 time=1ms TTL=64");
+                        response.Add("Reply from " + ip + " bytes=32 time=1ms TTL=64");
+                        return response;
+                    }
+                    else
+                    {
+                        response.Add("Request Timed Out");
+                        response.Add("Request Timed Out");
+                        response.Add("Request Timed Out");
+                        response.Add("Request Timed Out");
+                    }
                     return response;
                 }
                 else

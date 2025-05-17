@@ -76,6 +76,18 @@ public class Switch : Interactable
            return false;
     }
 
+    public string GetIpAdress(int vlanId)
+    {
+        if (vlanIp[vlanId] != null)
+        {
+            return vlanIp[vlanId];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public string GetDeviceInfo()
     {
         StringBuilder sb = new StringBuilder();

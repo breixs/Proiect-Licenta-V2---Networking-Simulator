@@ -140,7 +140,7 @@ public class CheckCableParents : MonoBehaviour
             {
                 foreach (GameObject neighbor in switchConnections[current])
                 {
-                    if (neighbor!=end && !neighbor.CompareTag("Switch") && !neighbor.CompareTag("Router"))
+                    if (neighbor!=end && !neighbor.CompareTag("Switch"))
                     {
                         continue;
                     }

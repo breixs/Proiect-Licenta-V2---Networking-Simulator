@@ -110,7 +110,7 @@ public class TaskScript : MonoBehaviour
             endDevices = ChooseCableParents.instance.ChooseEndDevices("Switch", "Switch");
             endDevice1 = endDevices[0];
             endDevice2 = endDevices[1];
-            playerUI.UpdateTaskText("Connect " + endDevice1.name + " with " + endDevice2.name);
+            playerUI.UpdateTaskText("Connect " + endDevice1.name + " with " + endDevice2.name + '\n' + '\n' + "Optional : Use another intermediary switch to connect the 2 devices");
         }
 
         isConnected=CheckCableParents.instance.CheckParents(endDevice1, endDevice2);
@@ -123,7 +123,7 @@ public class TaskScript : MonoBehaviour
         }
         else
         {
-            playerUI.UpdateTaskText("Connect " + endDevice1.name + " with "+ endDevice2.name);
+            playerUI.UpdateTaskText("Connect " + endDevice1.name + " with "+ endDevice2.name + '\n' + '\n' + "Optional : Use another intermediary switch to connect the 2 devices");
             return false;
         }
         
@@ -214,7 +214,7 @@ public class TaskScript : MonoBehaviour
         {
             taskText = "Connect " + endDevice1.name + " with " + endDevice2.name + " using " + middleDevice.name + '\n' + '\n'
                 + middleDevice.name + " ip adress = " + ipAdress + "/" + prefix.ToString() + '\n' + '\n'
-                + "Connect " + endDevice1Net2.name + " with " + endDevice2Net2.name + " using " + middleDeviceNet2.name + '\n' +'n'
+                + "Connect " + endDevice1Net2.name + " with " + endDevice2Net2.name + " using " + middleDeviceNet2.name + '\n' +'\n'
                 + middleDeviceNet2.name + " ip adress = " + ipAdressNet2 + "/" + prefixNet2.ToString();
             playerUI.UpdateTaskText(taskText);
             return false;
