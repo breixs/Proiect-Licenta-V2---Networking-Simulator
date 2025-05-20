@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test.unity
     guid: c58e32ac5fa23ab489f099e087955f28
   - enabled: 1
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Repeatable_level.unity
     guid: 4506ad0a413fa1946b21bcfcc71f0665
+  - enabled: 1
+    path: Assets/Scenes/Sandbox.unity
+    guid: e57df7e8e13cf624787257adf6322656
   m_configObjects: {}

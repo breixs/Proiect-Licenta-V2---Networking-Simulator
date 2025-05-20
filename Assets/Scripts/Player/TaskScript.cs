@@ -27,6 +27,8 @@ public class TaskScript : MonoBehaviour
     int prefix;
     int prefixNet2;
 
+    private bool debugCompleted = false;
+
     private void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -61,6 +63,12 @@ public class TaskScript : MonoBehaviour
 
     private void Update()
     {
+       
+        if(Input.GetKeyDown(KeyCode.Y))
+        {
+            debugCompleted = true;
+        }
+
         Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == "Level_1")
         {
@@ -86,7 +94,7 @@ public class TaskScript : MonoBehaviour
         }
         if (currentScene.name == "Level_3" || currentScene.name.Equals("Repeatable_level"))
         {
-            if (Level3Task())
+            if (Level3Task() || debugCompleted)
             {
                 completed = true;
             }
@@ -174,16 +182,22 @@ public class TaskScript : MonoBehaviour
 
         if (endDevices == null)
         {
-            endDevices = ChooseCableParents.instance.ChooseEndDevices("PatchPanelPort", "Router");
-            endDevice1 = endDevices[0];
-            endDevice2 = endDevices[1];
-            middleDevice = ChooseCableParents.instance.ChooseMiddleDevice("Switch");
+            do
+            {
+                endDevices = ChooseCableParents.instance.ChooseEndDevices("PatchPanelPort", "Router");
+                endDevice1 = endDevices[0];
+                endDevice2 = endDevices[1];
+                middleDevice = ChooseCableParents.instance.ChooseMiddleDevice("Switch");
+            } while (endDevice1.name.Equals("SpawnRouter") || endDevice2.name.Equals("SpawnRouter") || middleDevice.name.Equals("SpawnSwitch"));
+
             do {
                 endDevicesNet2 = ChooseCableParents.instance.ChooseEndDevices("PatchPanelPort", "Router");
                 endDevice1Net2 = endDevicesNet2[0];
                 endDevice2Net2 = endDevicesNet2[1];
                 middleDeviceNet2 = ChooseCableParents.instance.ChooseMiddleDevice("Switch");
-            }while(endDevice1.Equals(endDevice1Net2) || middleDevice.Equals(middleDeviceNet2));
+            }while(endDevice1.Equals(endDevice1Net2) || middleDevice.Equals(middleDeviceNet2)  || (endDevice1Net2.name.Equals("SpawnRouter") || endDevice2Net2.name.Equals("SpawnRouter") || 
+            middleDeviceNet2.name.Equals("SpawnSwitch")));
+
             taskText = "Connect " + endDevice1.name + " with " + endDevice2.name + " using " + middleDevice.name + '\n' + '\n'
                 + middleDevice.name + " ip adress = " + ipAdress + "/" + prefix.ToString() + '\n' + '\n'
                 + "Connect " + endDevice1Net2.name + " with " + endDevice2Net2.name + " using " + middleDeviceNet2.name + '\n' + '\n'

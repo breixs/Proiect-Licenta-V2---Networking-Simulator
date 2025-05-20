@@ -68,7 +68,7 @@ public class PlayerInteract : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * distance);
         RaycastHit hitInfo;
 
-        if (isHolding && inputManager.onFoot.PickUp.triggered)
+        if (!PlayerUI.gameOver && isHolding && inputManager.onFoot.PickUp.triggered)
         {
             pickUpScript.StopClipping();
             pickUpScript.DropObject(false, null);
@@ -77,7 +77,7 @@ public class PlayerInteract : MonoBehaviour
             isHoldingConsole = false;
         }
 
-        if (Physics.Raycast(ray, out hitInfo, distance, mask))
+        if (!PlayerUI.gameOver && Physics.Raycast(ray, out hitInfo, distance, mask))
         {
             if (hitInfo.collider.GetComponent<Interactable>() != null)
             {

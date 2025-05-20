@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 01a4ff7cf67ab55429f2c5ba08d33d36, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -9531,6 +9531,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1551370900}
     - target: {fileID: 5656126637210478056, guid: cf36a3ae31d171d4e80cb35453bdeba9, type: 3}
+      propertyPath: terminal
+      value: 
+      objectReference: {fileID: 129665800}
+    - target: {fileID: 5656126637210478056, guid: cf36a3ae31d171d4e80cb35453bdeba9, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 563741372}
@@ -9538,6 +9542,10 @@ PrefabInstance:
       propertyPath: promptText
       value: 
       objectReference: {fileID: 754034583}
+    - target: {fileID: 5656126637210478056, guid: cf36a3ae31d171d4e80cb35453bdeba9, type: 3}
+      propertyPath: gameOverMenu
+      value: 
+      objectReference: {fileID: 129665800}
     - target: {fileID: 5656126637210478056, guid: cf36a3ae31d171d4e80cb35453bdeba9, type: 3}
       propertyPath: notebookMenu
       value: 

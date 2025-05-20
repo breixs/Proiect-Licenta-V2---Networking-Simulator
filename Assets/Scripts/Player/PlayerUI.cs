@@ -14,11 +14,13 @@ public class PlayerUI : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject notebookMenu;
     public GameObject endMenu;
+    public GameObject gameOverMenu;
     public GameObject terminal;
     private InputManager inputManager;
     public static bool paused = false;
     public static bool notebookState = false;
     public static bool inTerminal = false;
+    public static bool gameOver = false;
 
     void Start()
     {
@@ -27,11 +29,12 @@ public class PlayerUI : MonoBehaviour
         notebookMenu.SetActive(false);
         endMenu.SetActive(false);
         promptText.gameObject.SetActive(false);
+        gameOverMenu.SetActive(false);
         Time.timeScale = 1f;
     }
     private void Update()
     {
-        if (inputManager.onFoot.Pause.triggered && !notebookState && !inTerminal)
+        if (inputManager.onFoot.Pause.triggered && !notebookState && !inTerminal && !gameOver)
         {
             if (!paused)
             {
@@ -44,7 +47,7 @@ public class PlayerUI : MonoBehaviour
                 ResumeGame();
             }
         }
-        if (inputManager.onFoot.Notebook.triggered && !paused && !endMenu.activeSelf)
+        if (inputManager.onFoot.Notebook.triggered && !paused && (!endMenu.activeSelf || !gameOverMenu.activeSelf))
         {
             notebookState = !notebookState;
             OpenNotebook(notebookState);
@@ -95,5 +98,12 @@ public class PlayerUI : MonoBehaviour
     public void UpdateTaskText(string txt)
     {
         taskText.text = txt;
+    }
+
+    public void GameOver()
+    {
+        gameOverMenu.SetActive(true);
+        Time.timeScale = 0f;
+        gameOver = true;
     }
 }
