@@ -19,6 +19,21 @@ public class ExitDoor : Interactable
     protected override void CondInteract()
     {
         endMenu.SetActive(true);
+        if(sceneName.Equals("Level_1") && firstInteract)
+        {
+            PlayerPrefs.SetInt("lv1", 1);
+            firstInteract = false;
+        }
+        if (sceneName.Equals("Level_2") && firstInteract)
+        {
+            PlayerPrefs.SetInt("lv2", 1);
+            firstInteract = false;
+        }
+        if (sceneName.Equals("Level_3") && firstInteract)
+        {
+            PlayerPrefs.SetInt("lv3", 1);
+            firstInteract = false;
+        }
         if (sceneName.Equals("Repeatable_level") && firstInteract)
         {
             CurrentScoreScript.currentScore += 1;

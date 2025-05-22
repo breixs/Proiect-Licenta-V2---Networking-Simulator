@@ -5,12 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class TaskScript : MonoBehaviour
 {
-    //private static TaskScript instance;
+    public GameObject notebook;
+    private NotebookUI notebookUI;
     private PlayerUI playerUI;
-    //private void Awake()
-    //{
-    //    instance = this;
-    //}
     private GameObject[] endDevices;
     private GameObject endDevice1, endDevice2, middleDevice;
     private GameObject[] endDevicesNet2;
@@ -33,6 +30,7 @@ public class TaskScript : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         playerUI =GetComponent<PlayerUI>();
+        notebookUI=notebook.GetComponent<NotebookUI>();
 
         if (currentScene.name == "Level_2" || currentScene.name=="Level_3" || currentScene.name.Equals("Repeatable_level"))
         {
@@ -119,6 +117,7 @@ public class TaskScript : MonoBehaviour
             endDevice1 = endDevices[0];
             endDevice2 = endDevices[1];
             playerUI.UpdateTaskText("Connect " + endDevice1.name + " with " + endDevice2.name + '\n' + '\n' + "Optional : Use another intermediary switch to connect the 2 devices");
+            notebookUI.UpdateTaskNotebook("Connect " + endDevice1.name + " with " + endDevice2.name + '\n' + '\n' + "Optional : Use another intermediary switch to connect the 2 devices");
         }
 
         isConnected=CheckCableParents.instance.CheckParents(endDevice1, endDevice2);
@@ -152,6 +151,7 @@ public class TaskScript : MonoBehaviour
 
             taskText = "Connect " + endDevice1.name + " with " + endDevice2.name + " using " + middleDevice.name + '\n' + '\n' + middleDevice.name + " ip adress = " + ipAdress + "/" + prefix.ToString();
             playerUI.UpdateTaskText(taskText);
+            notebookUI.UpdateTaskNotebook(taskText);
         }
        
         isConnected = CheckCableParents.instance.CheckParents(endDevice1, endDevice2, middleDevice, vlanId, ipAdressWithMask);
@@ -203,6 +203,7 @@ public class TaskScript : MonoBehaviour
                 + "Connect " + endDevice1Net2.name + " with " + endDevice2Net2.name + " using " + middleDeviceNet2.name + '\n' + '\n'
                 + middleDeviceNet2.name + " ip adress = " + ipAdressNet2 + "/" + prefixNet2.ToString();
             playerUI.UpdateTaskText(taskText);
+            notebookUI.UpdateTaskNotebook(taskText);
         }
 
        
