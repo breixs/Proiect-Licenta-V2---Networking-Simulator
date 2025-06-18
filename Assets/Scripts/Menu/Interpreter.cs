@@ -52,10 +52,11 @@ public class Interpreter : MonoBehaviour
                 terminalEnabled = false;
                 configureTerminal = false;
                 inInterface = false;
-                deviceText.text = newConnectedDevice.transform.name + ">";
-                deviceText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200f);
-                sampleDeviceText.text = newConnectedDevice.transform.name + ">";
-                sampleDeviceText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200f);
+                firstEnbale = true;
+                //deviceText.text = newConnectedDevice.transform.name + ">";
+                //deviceText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200f);
+                //sampleDeviceText.text = newConnectedDevice.transform.name + ">";
+                //sampleDeviceText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200f);
             }
 
             connectedDevice = newConnectedDevice;
@@ -67,6 +68,10 @@ public class Interpreter : MonoBehaviour
                 sampleDeviceText.text = connectedDevice.transform.name + ">";
                 sampleDeviceText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200f);
                 firstEnbale = false;
+            }
+            else
+            {
+                terminalManager.ScrollToBottom();
             }
 
          
@@ -93,13 +98,14 @@ public class Interpreter : MonoBehaviour
         {
             case "help":
             case "?":
+                Debug.Log("in interface:" + inInterface + "terminal enabled: " + terminalEnabled + "configure terminal" + configureTerminal);
                 if (!terminalEnabled)
                 {
                     response.Add("Commands available:");
                     response.Add("enable");
                     return response;
                 }
-                else if(terminalEnabled && !configureTerminal)
+                else if(terminalEnabled && !configureTerminal && !inInterface)
                 {
                     response.Add("Commands available:");
                     response.Add("configure terminal");
@@ -108,7 +114,7 @@ public class Interpreter : MonoBehaviour
                     response.Add("exit");
                     return response;
                 }
-                else if(terminalEnabled && configureTerminal)
+                else if(terminalEnabled && configureTerminal && !inInterface)
                 {
                     response.Add("Commands available:");
                     response.Add("hostname 'name'");
@@ -233,6 +239,10 @@ public class Interpreter : MonoBehaviour
                 {
                     connectedDevice.name = arguments[1];
                     response.Add("Changed hostname");
+                    deviceText.text = connectedDevice.transform.name + "(conf-t)";
+                    deviceText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 300f);
+                    sampleDeviceText.text = connectedDevice.transform.name + "(conf-t)";
+                    sampleDeviceText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 300f);
                     return response;
                 }
                 else
@@ -241,7 +251,7 @@ public class Interpreter : MonoBehaviour
                     return response;
                 }
             case "ping":
-                if(terminalEnabled && !configureTerminal && arguments.Length==2 && arguments[1]!=string.Empty)
+                if(terminalEnabled && !configureTerminal && arguments.Length==2 && arguments[1]!=string.Empty && arguments[1].Contains("."))
                 {
                     bool isConnected=false;
                     string ip=null;
@@ -249,7 +259,14 @@ public class Interpreter : MonoBehaviour
 
                     var ipInfos=arguments[1].Split('.');
 
-                    int vlanFromIp = int.Parse(ipInfos[2]);
+                    int vlanFromIp=0;
+                    if(ipInfos.Length==4)
+                        vlanFromIp = int.Parse(ipInfos[2]);
+                    else
+                    {
+                        response.Add("Invalid Command");
+                        return response;
+                    }
 
                     for (int i=0; i<switches.Length; i++)
                     {

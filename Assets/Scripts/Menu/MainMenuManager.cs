@@ -12,14 +12,17 @@ public class MainMenuManager : MonoBehaviour
     {
         levelPanel.SetActive(false);
         alertPanel.SetActive(false);
+        Cursor.visible = true;
     }
 
     public void ActivateLevelSelect()
     {
+        Cursor.visible = true;
         levelPanel.SetActive(true);
     }
     public void DeactivateLevelSelect()
     {
+        Cursor.visible = true;
         levelPanel.SetActive(false);
     }
 
@@ -33,6 +36,7 @@ public class MainMenuManager : MonoBehaviour
             SceneManager.LoadScene("Level_2");
         else
         {
+            Cursor.visible = true;
             alertPanel.SetActive(true);
         }
     }
@@ -42,6 +46,7 @@ public class MainMenuManager : MonoBehaviour
             SceneManager.LoadScene("Level_3");
         else
         {
+            Cursor.visible = true;
             alertPanel.SetActive(true);
         }
     }
@@ -51,12 +56,14 @@ public class MainMenuManager : MonoBehaviour
             SceneManager.LoadScene("Repeatable_level");
         else
         {
+            Cursor.visible = true;
             alertPanel.SetActive(true);
         }
     }
 
     public void DeactivateALertPanel()
     {
+        Cursor.visible = true;
         alertPanel.SetActive(false);
     }
 

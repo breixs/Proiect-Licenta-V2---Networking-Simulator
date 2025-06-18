@@ -19,6 +19,7 @@ public class ExitDoor : Interactable
     protected override void CondInteract()
     {
         endMenu.SetActive(true);
+        Cursor.visible = true;
         if(sceneName.Equals("Level_1") && firstInteract)
         {
             PlayerPrefs.SetInt("lv1", 1);

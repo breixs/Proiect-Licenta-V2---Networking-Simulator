@@ -13,13 +13,8 @@ public class TerminalManager : MonoBehaviour
     public GameObject userInputLine;
     public ScrollRect sr;
     public GameObject commandLineContainer;
-    //public TextMeshPro deviceText;
+ 
     private string userInput;
-
-    //public GameObject laptop;
-    //private GameObject connectedDevice;
-
-    //private short counter = 0;
 
     Interpreter interpreter;
 
@@ -30,8 +25,8 @@ public class TerminalManager : MonoBehaviour
 
     private void OnEnable()
     {
-        commandLineContainer.GetComponent<RectTransform>().sizeDelta = new Vector2(1772f, 867f);
-        sr.verticalNormalizedPosition = 1f;
+        commandLineContainer.GetComponent<RectTransform>().sizeDelta = new Vector2(1772f, commandLineContainer.GetComponent<RectTransform>().sizeDelta.y);
+        sr.verticalNormalizedPosition = 0f;
     }
 
     private void OnGUI()
@@ -53,7 +48,8 @@ public class TerminalManager : MonoBehaviour
 
             int lines = AddInterpreterLines(interpreter.Interpret(userInput));
 
-            //ScrollToBottom(lines);
+            if(lines>3)
+                ScrollToBottom();
 
             userInputLine.transform.SetAsLastSibling();
 
@@ -109,16 +105,14 @@ public class TerminalManager : MonoBehaviour
         return interpretation.Count;
     }
 
-    void ScrollToBottom(int lines)
+    public void ScrollToBottom()
     {
-        if(lines>3)
-        {
-            sr.velocity = new Vector2(0, 450);
-        }
-        else
-        {
-            sr.verticalNormalizedPosition = 0f;
-        }
+         sr.velocity = new Vector2(0, commandLineContainer.GetComponent<RectTransform>().sizeDelta.y);
+       
+        //else
+        //{
+        //    sr.verticalNormalizedPosition = 0f;
+        //}
     }
 
     public void ClearTerminal()
@@ -136,10 +130,7 @@ public class TerminalManager : MonoBehaviour
         }
 
         // Reset scroll height
-        commandLineContainer.GetComponent<RectTransform>().sizeDelta = new Vector2(
-            commandLineContainer.GetComponent<RectTransform>().sizeDelta.x,
-            0f
-        );
+        commandLineContainer.GetComponent<RectTransform>().sizeDelta = new Vector2(1772f,867f);
 
         // Scroll to top
         sr.verticalNormalizedPosition = 1f;

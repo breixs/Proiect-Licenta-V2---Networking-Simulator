@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8527309855924561908}
   - component: {fileID: 4578023467443903551}
   - component: {fileID: 6360674589208282797}
+  - component: {fileID: 3530329609681787696}
   m_Layer: 6
   m_Name: LaptopPort
   m_TagString: LaptopPort
@@ -105,6 +106,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 30.383255, y: 1.3440089, z: 18.508598}
   m_Center: {x: -12.341696, y: 0.68420386, z: 3.7008777}
+--- !u!114 &3530329609681787696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2626291240527511925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca82aec11e95574a955ff06c52970b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: 'E: Connect Cable to Laptop'
 --- !u!1001 &5884238584010058110
 PrefabInstance:
   m_ObjectHideFlags: 0

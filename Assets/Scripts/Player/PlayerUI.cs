@@ -39,6 +39,7 @@ public class PlayerUI : MonoBehaviour
             if (!paused)
             {
                 Debug.Log("Pause");
+                Cursor.visible = true;
                 PauseGame();
             }
             else
@@ -51,6 +52,7 @@ public class PlayerUI : MonoBehaviour
         {
             notebookState = !notebookState;
             OpenNotebook(notebookState);
+            Cursor.visible = true;
         }
         if(inputManager.onFoot.Pause.triggered && inTerminal)
         {
@@ -73,6 +75,7 @@ public class PlayerUI : MonoBehaviour
     {
         if (!endMenu.activeSelf)
         {
+            Cursor.visible = true;
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
             paused = true;
@@ -80,6 +83,7 @@ public class PlayerUI : MonoBehaviour
     }
     public void ResumeGame()
     {
+        Cursor.visible = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
@@ -105,5 +109,6 @@ public class PlayerUI : MonoBehaviour
         gameOverMenu.SetActive(true);
         Time.timeScale = 0f;
         gameOver = true;
+        Cursor.visible = true;
     }
 }
