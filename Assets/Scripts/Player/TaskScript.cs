@@ -140,7 +140,6 @@ public class TaskScript : MonoBehaviour
     {
         string taskText = null;
         bool isConnected = false;
-        //bool taskCompleted = false;
 
         if (endDevices == null)
         {
@@ -276,8 +275,6 @@ public class TaskScript : MonoBehaviour
                 Debug.Log("bad prefix");
                 break;
         }
-
-     
         return mask;
     }
 }

@@ -11,7 +11,6 @@ public class InputManager : MonoBehaviour
     private PlayerMotor motor;
     private PlayerLook look;
 
-    // Start is called before the first frame update
     void Awake()
     {
         playerInput=new PlayerInput();
@@ -24,7 +23,6 @@ public class InputManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         //transmitem valorile din actiunile de miscare la playermotor

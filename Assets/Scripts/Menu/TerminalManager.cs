@@ -39,34 +39,18 @@ public class TerminalManager : MonoBehaviour
 
         if (terminalInput.isFocused && terminalInput.text != "" && Input.GetKeyDown(KeyCode.Return))
         {
-
             userInput = terminalInput.text;
-
             ClearInputField();
-
             AddDirectoryLine(userInput);
 
             int lines = AddInterpreterLines(interpreter.Interpret(userInput));
-
             if(lines>3)
                 ScrollToBottom();
 
             userInputLine.transform.SetAsLastSibling();
-
             terminalInput.ActivateInputField();
             terminalInput.Select();
-            //if (counter < 19)
-            //{
-            //    sr.verticalNormalizedPosition = 0.5f;
-            //    counter++;
-            //}
-            //else
-            //{
-            //    sr.verticalNormalizedPosition = 0.5f;
-            //}
         }
-
-
     }
 
     private void ClearInputField()
@@ -108,31 +92,22 @@ public class TerminalManager : MonoBehaviour
     public void ScrollToBottom()
     {
          sr.velocity = new Vector2(0, commandLineContainer.GetComponent<RectTransform>().sizeDelta.y);
-       
-        //else
-        //{
-        //    sr.verticalNormalizedPosition = 0f;
-        //}
     }
 
     public void ClearTerminal()
     {
         foreach (Transform child in commandLineContainer.transform)
         {
-            // Skip the input line and any object that isn't a clone
             if (child.gameObject == userInputLine ||
-                !child.name.Contains("(Clone)")) // Only delete clones
+                !child.name.Contains("(Clone)"))
             {
                 continue;
             }
 
             Destroy(child.gameObject);
-        }
-
-        // Reset scroll height
+        } 
         commandLineContainer.GetComponent<RectTransform>().sizeDelta = new Vector2(1772f,867f);
 
-        // Scroll to top
         sr.verticalNormalizedPosition = 1f;
     }
 }

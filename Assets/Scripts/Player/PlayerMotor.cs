@@ -45,7 +45,7 @@ public class PlayerMotor : MonoBehaviour
         }
 
     }
-    //preia inputurile din InputManager si le trimite la characther controller
+ 
     public void ProcessMove(Vector2 input)
     {
         if(!PlayerUI.paused && !PlayerUI.notebookState && !PlayerUI.inTerminal)
@@ -54,13 +54,12 @@ public class PlayerMotor : MonoBehaviour
             moveDirection.x = input.x;
             moveDirection.z = input.y;
             controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
-            //se aplica forta gravitationala constanta
+            
             playerVelocity.y += gravity * Time.deltaTime;
             if (isGrounded && playerVelocity.y < 0)
                 playerVelocity.y = -2f;
 
             controller.Move(playerVelocity * Time.deltaTime);
-            //Debug.Log(playerVelocity.y);
         }
         
     }

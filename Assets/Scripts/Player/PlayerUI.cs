@@ -31,6 +31,7 @@ public class PlayerUI : MonoBehaviour
         promptText.gameObject.SetActive(false);
         gameOverMenu.SetActive(false);
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     private void Update()
     {
@@ -52,13 +53,13 @@ public class PlayerUI : MonoBehaviour
         {
             notebookState = !notebookState;
             OpenNotebook(notebookState);
-            Cursor.visible = true;
         }
         if(inputManager.onFoot.Pause.triggered && inTerminal)
         {
             terminal.SetActive(false);
             inTerminal = false;
             Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void UpdateText(string promptMessage)
@@ -76,6 +77,7 @@ public class PlayerUI : MonoBehaviour
         if (!endMenu.activeSelf)
         {
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
             paused = true;
@@ -84,6 +86,7 @@ public class PlayerUI : MonoBehaviour
     public void ResumeGame()
     {
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
@@ -96,6 +99,16 @@ public class PlayerUI : MonoBehaviour
 
     public void OpenNotebook(bool state)
     {
+        if (state)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
         notebookMenu.SetActive(state);
     }
 
@@ -110,5 +123,6 @@ public class PlayerUI : MonoBehaviour
         Time.timeScale = 0f;
         gameOver = true;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

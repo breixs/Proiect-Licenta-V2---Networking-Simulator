@@ -98,7 +98,6 @@ public class Interpreter : MonoBehaviour
         {
             case "help":
             case "?":
-                Debug.Log("in interface:" + inInterface + "terminal enabled: " + terminalEnabled + "configure terminal" + configureTerminal);
                 if (!terminalEnabled)
                 {
                     response.Add("Commands available:");

@@ -23,9 +23,6 @@ public class Switch : Interactable
         infoPanel.SetActive(false);
     }
 
-    void Update()
-    {
-    }
     protected override void Interact()
     {
         if (!panelActive)

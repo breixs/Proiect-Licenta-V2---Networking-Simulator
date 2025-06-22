@@ -11,5 +11,6 @@ public class Laptop : Interactable
         terminal.SetActive(true);
         PlayerUI.inTerminal = true;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

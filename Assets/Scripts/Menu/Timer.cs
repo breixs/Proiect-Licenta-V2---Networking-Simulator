@@ -13,6 +13,9 @@ public class Timer : MonoBehaviour
     private bool isGameOver = false;
     private int timeLimit=7;
 
+    private int minutes;
+    private int seconds;
+
     private void Start()
     {
         Scene scene = SceneManager.GetActiveScene();
@@ -39,9 +42,9 @@ public class Timer : MonoBehaviour
     void Update()
     {
         elapsedTime+=Time.deltaTime;
-        int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        minutes = Mathf.FloorToInt(elapsedTime / 60);
         Debug.Log("minutes: "+minutes);
-        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+        seconds = Mathf.FloorToInt(elapsedTime % 60);
 
         timerTxt.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
@@ -51,5 +54,10 @@ public class Timer : MonoBehaviour
             playerUI.GameOver();
         }
         
+    }
+
+    public string getElapsedTime()
+    {
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

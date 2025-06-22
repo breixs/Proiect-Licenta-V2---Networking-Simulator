@@ -29,26 +29,18 @@ public class PickUpScript : MonoBehaviour
                 heldObjColl = pickUpObj.GetComponent<Collider>();
                 heldObjColl.isTrigger=true;
             }
-            //if (pickUpObj.GetComponent<SphereCollider>())
-            //{
-            //    Debug.Log("Got Collider of " + pickUpObj.name);
-            //    heldObjColl = pickUpObj.GetComponent<SphereCollider>();
-            //    heldObjColl.isTrigger = true;
-            //}
                 heldObjRb = pickUpObj.GetComponent<Rigidbody>();  
             if (heldObjRb.useGravity == false)
                 heldObjRb.useGravity = true;
             heldObjRb.isKinematic = true;
             heldObjRb.transform.parent = holdPos.transform;
-            //pickUpCam.gameObject.SetActive(true);
-            //Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
+            
         }
     }
     public void DropObject(bool kinematic, GameObject parentObj)
     {
         
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
-        //pickUpCam.gameObject.SetActive(false);
         if (kinematic == true)
             heldObjRb.isKinematic = true;
         else
@@ -93,7 +85,6 @@ public class PickUpScript : MonoBehaviour
 
     public void ConnectObject(Vector3 pos, GameObject parentObj, Vector3 rot)
     {
-        //Vector3 rot = new Vector3(0, -90, 0);
         heldObj.transform.position = pos;
         heldObjRb.isKinematic = true;
         heldObjRb.useGravity = false;

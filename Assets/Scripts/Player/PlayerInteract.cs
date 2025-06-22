@@ -32,9 +32,13 @@ public class PlayerInteract : MonoBehaviour
     public AudioClip audioClipDoor;
     public AudioSource audioSourceConnect;
     public AudioClip audioClipConnect;
+    public AudioSource backgroundSound;
 
     private void Awake()
     {
+        audioSourceDoor.volume = PlayerPrefs.GetFloat("volume");
+        audioSourceConnect.volume = PlayerPrefs.GetFloat("volume");
+        backgroundSound.volume = PlayerPrefs.GetFloat("volume");
         audioSourceDoor.PlayOneShot(audioClipDoor);
     }
 
@@ -62,7 +66,6 @@ public class PlayerInteract : MonoBehaviour
         {
             go.GetComponent<MeshRenderer>().material = transparent;
         }
-        //playerUI.UpdateText(string.Empty);
 
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * distance);
@@ -144,7 +147,7 @@ public class PlayerInteract : MonoBehaviour
                         {
                             pickUpScript.SetObject(hitInfo.collider.transform.position);
                             isHolding = false;
-                            //hitInfo.collider.transform.position
+                            
                         }
                     }
                 }
@@ -158,7 +161,7 @@ public class PlayerInteract : MonoBehaviour
                         {
                             pickUpScript.SetObject(hitInfo.collider.transform.position);
                             isHolding = false;
-                            //hitInfo.collider.transform.position
+                            
                         }
                     }
                 }
@@ -188,13 +191,6 @@ public class PlayerInteract : MonoBehaviour
                     isHoldingConsole = false;
                     isHolding = false;
                 }
-                //else if (inputManager.onFoot.Interact.triggered && hitInfo.collider.CompareTag("Laptop"))
-                //{
-                //    audioSourceConnect.PlayOneShot(audioClipConnect);
-                //    pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject /*hitInfo.collider.transform.parent.rotation*/);
-                //    isHoldingRope = false;
-                //    isHolding = false;
-                //}
             }
         }
     }
