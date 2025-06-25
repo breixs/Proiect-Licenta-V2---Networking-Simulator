@@ -31,16 +31,24 @@ public class MainMenuManager : MonoBehaviour
             LoadVolume();
         }
 
-        if(PlayerPrefs.HasKey("vsync") && PlayerPrefs.GetInt("vsync") ==1)
+        if(!PlayerPrefs.HasKey("vsync"))
         {
+            PlayerPrefs.SetInt("vsync", 1);
+            PlayerPrefs.Save();
             vSyncToggle.SetIsOnWithoutNotify(true);
             QualitySettings.vSyncCount = 1;
+        }
+
+        if(PlayerPrefs.GetInt("vsync") ==0)
+        {
+            vSyncToggle.SetIsOnWithoutNotify(false);
+            QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = 300;
         }
         else
         {
             vSyncToggle.SetIsOnWithoutNotify(true);
-            QualitySettings.vSyncCount = 0;
+            QualitySettings.vSyncCount = 1;
         }
     }
 
@@ -165,12 +173,12 @@ public class MainMenuManager : MonoBehaviour
         {
             QualitySettings.vSyncCount = 1;
             PlayerPrefs.SetInt("vsync", 1);
-            Application.targetFrameRate = 300;
             Debug.Log("vsync on");
         }
         else
         {
-            QualitySettings.vSyncCount = 1;
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 300;
             PlayerPrefs.SetInt("vsync", 0);
             Debug.Log("vsync off");
         }

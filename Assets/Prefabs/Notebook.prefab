@@ -2859,9 +2859,9 @@ MonoBehaviour:
   TasksBackground: {fileID: 2292509897213176290}
   ToolsBackground: {fileID: 4546053755292447435}
   LearnBackground: {fileID: 5193003644087611793}
-  switchBackground: {fileID: 6433644416555630656}
-  routerBackground: {fileID: 457514693247829199}
-  commandBackground: {fileID: 5264014428637867322}
+  switchBackground: {fileID: 1007198957188560604}
+  routerBackground: {fileID: 7450540645136770165}
+  commandBackground: {fileID: 1062411633044694085}
   taskText: {fileID: 5778527566530757071}
 --- !u!1 &4546053755292447435
 GameObject:
