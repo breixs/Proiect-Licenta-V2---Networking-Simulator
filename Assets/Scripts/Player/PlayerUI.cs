@@ -104,6 +104,11 @@ public class PlayerUI : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+        else if(!state && inTerminal)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;

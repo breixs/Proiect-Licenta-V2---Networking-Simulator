@@ -327,5 +327,341 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8495690763182253747, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8324861355918911967}
+    - targetCorrespondingSourceObject: {fileID: 6027350720434783017, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1293680978109080503}
+    - targetCorrespondingSourceObject: {fileID: 5514189227920886351, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2116680171230446979}
+    - targetCorrespondingSourceObject: {fileID: 1016082569564219099, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2024183553825968793}
+    - targetCorrespondingSourceObject: {fileID: 1334260495450974498, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6334934673684726566}
+    - targetCorrespondingSourceObject: {fileID: 206868779670720878, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3654855235333325676}
+    - targetCorrespondingSourceObject: {fileID: 488090834016215912, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7045111976888154793}
+    - targetCorrespondingSourceObject: {fileID: 4284934066134483443, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5093668616497376583}
+    - targetCorrespondingSourceObject: {fileID: 4955661904201025909, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4814133714303473177}
+    - targetCorrespondingSourceObject: {fileID: 3686934638915842025, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1367547162576391275}
+    - targetCorrespondingSourceObject: {fileID: 7147139450922915469, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3308259286975982961}
+    - targetCorrespondingSourceObject: {fileID: 7849124374721618826, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8046917709935422031}
+    - targetCorrespondingSourceObject: {fileID: 1534351987868020358, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3633472101689614393}
+    - targetCorrespondingSourceObject: {fileID: 2150330584918283118, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3317091486999128317}
+    - targetCorrespondingSourceObject: {fileID: 6024135758995614710, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3299038129149224347}
+    - targetCorrespondingSourceObject: {fileID: 4334809066916958433, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7449622917775680835}
   m_SourcePrefab: {fileID: 100100000, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+--- !u!1 &453807613589037857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6027350720434783017, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1293680978109080503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453807613589037857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &464798316610915326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6024135758995614710, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3299038129149224347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464798316610915326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &1238278979781454205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4955661904201025909, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4814133714303473177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238278979781454205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &1832712118435113543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5514189227920886351, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2116680171230446979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832712118435113543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &2310220893762733755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8495690763182253747, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8324861355918911967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310220893762733755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &3947107533693564549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7147139450922915469, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3308259286975982961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3947107533693564549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &4108687062293939074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7849124374721618826, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8046917709935422031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4108687062293939074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &4657374119269748366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1534351987868020358, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3633472101689614393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657374119269748366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &5146896173769115946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1334260495450974498, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6334934673684726566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146896173769115946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &5205825075832697702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2150330584918283118, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3317091486999128317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5205825075832697702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &5994080075304878944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 488090834016215912, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7045111976888154793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5994080075304878944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &6284700824417743206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 206868779670720878, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3654855235333325676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6284700824417743206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &6624959582080141011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1016082569564219099, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2024183553825968793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6624959582080141011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &7404994828138385377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3686934638915842025, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1367547162576391275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7404994828138385377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &7620400580969115881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4334809066916958433, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7449622917775680835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7620400580969115881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
+--- !u!1 &7970923571340435963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4284934066134483443, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+  m_PrefabInstance: {fileID: 6190562815881928712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5093668616497376583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7970923571340435963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'

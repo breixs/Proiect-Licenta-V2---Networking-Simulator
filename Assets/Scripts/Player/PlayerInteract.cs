@@ -106,7 +106,6 @@ public class PlayerInteract : MonoBehaviour
                             isHolding = true;
                             pickUpScript.PickUpObject(hitInfo.transform.gameObject);
                             pickUpScript.MoveObject();
-                            //pickUpScript.RotateObject();
                         }
                         if (hitInfo.transform.gameObject.tag == "PickUpRope")
                         {

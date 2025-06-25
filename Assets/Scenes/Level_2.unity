@@ -2585,6 +2585,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &659887686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1062411633044694085, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
+  m_PrefabInstance: {fileID: 1063242371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &666986995
 GameObject:
   m_ObjectHideFlags: 0
@@ -3442,6 +3447,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771151532}
   m_CullTransparentMesh: 1
+--- !u!1 &773215007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7450540645136770165, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
+  m_PrefabInstance: {fileID: 1063242371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &776108918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3760,6 +3770,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &897243452 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1007198957188560604, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
+  m_PrefabInstance: {fileID: 1063242371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &945355400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4008,10 +4023,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2292509897213176290, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2350283195788405723, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
       propertyPath: m_SizeDelta.x
       value: 465.06
@@ -4048,7 +4059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4447882577459217014, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4543240360027518528, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
       propertyPath: m_text
@@ -4101,6 +4112,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 296.66
       objectReference: {fileID: 0}
+    - target: {fileID: 5193003644087611793, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502516947609693697, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
+      propertyPath: LearnBackground
+      value: 
+      objectReference: {fileID: 1569452323}
+    - target: {fileID: 7502516947609693697, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
+      propertyPath: routerBackground
+      value: 
+      objectReference: {fileID: 773215007}
+    - target: {fileID: 7502516947609693697, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
+      propertyPath: switchBackground
+      value: 
+      objectReference: {fileID: 897243452}
+    - target: {fileID: 7502516947609693697, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
+      propertyPath: commandBackground
+      value: 
+      objectReference: {fileID: 659887686}
     - target: {fileID: 7739397349565447608, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -14
@@ -6638,6 +6669,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551370898}
   m_CullTransparentMesh: 1
+--- !u!1 &1569452323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5193003644087611793, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
+  m_PrefabInstance: {fileID: 1063242371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1584045229
 GameObject:
   m_ObjectHideFlags: 0

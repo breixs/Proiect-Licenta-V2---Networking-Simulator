@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9181668641408624143}
   - component: {fileID: 8432309373779728114}
   - component: {fileID: 6749659497721720681}
+  - component: {fileID: 7981843261842205598}
   m_Layer: 6
   m_Name: EthernetPort (12)
   m_TagString: ConsolePort
@@ -105,6 +106,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &7981843261842205598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635704505532066539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &1545511263946008532
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +131,7 @@ GameObject:
   - component: {fileID: 5633844391756481225}
   - component: {fileID: 8904831113681617259}
   - component: {fileID: 7399448383676671884}
+  - component: {fileID: 7903767166933991203}
   m_Layer: 6
   m_Name: EthernetPort (13)
   m_TagString: ConsolePort
@@ -210,6 +225,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &7903767166933991203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545511263946008532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &2530420739630832370
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +250,7 @@ GameObject:
   - component: {fileID: 3096667600034279649}
   - component: {fileID: 2566550507359481786}
   - component: {fileID: 9208579164628271318}
+  - component: {fileID: 5832405120648422554}
   m_Layer: 6
   m_Name: EthernetPort (9)
   m_TagString: SwitchPort
@@ -315,6 +344,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &5832405120648422554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2530420739630832370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &2583158516302807305
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +503,7 @@ GameObject:
   - component: {fileID: 7867641684032853390}
   - component: {fileID: 7245315234548218503}
   - component: {fileID: 2166800862135159374}
+  - component: {fileID: 1562182482346098968}
   m_Layer: 6
   m_Name: EthernetPort (3)
   m_TagString: SwitchPort
@@ -554,6 +597,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &1562182482346098968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2654085646868027751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &2910755571182010696
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +622,7 @@ GameObject:
   - component: {fileID: 3934692832520683666}
   - component: {fileID: 332291376114947128}
   - component: {fileID: 1948217566614690093}
+  - component: {fileID: 2292746199528825190}
   m_Layer: 6
   m_Name: EthernetPort (5)
   m_TagString: SwitchPort
@@ -659,6 +716,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &2292746199528825190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2910755571182010696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &3155508956558355177
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +741,7 @@ GameObject:
   - component: {fileID: 5044015538388575516}
   - component: {fileID: 1360394065176612358}
   - component: {fileID: 7721441296799847119}
+  - component: {fileID: 5652767489684594740}
   m_Layer: 6
   m_Name: EthernetPort (8)
   m_TagString: SwitchPort
@@ -764,6 +835,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &5652767489684594740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3155508956558355177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &4304275582754391503
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,6 +962,7 @@ GameObject:
   - component: {fileID: 235919008072820635}
   - component: {fileID: 8472580764755456372}
   - component: {fileID: 7800941764331433112}
+  - component: {fileID: 5514006934629262618}
   m_Layer: 6
   m_Name: EthernetPort (6)
   m_TagString: SwitchPort
@@ -971,6 +1056,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &5514006934629262618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326980212615084910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &4430260051243925984
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,6 +1081,7 @@ GameObject:
   - component: {fileID: 2304224883166294732}
   - component: {fileID: 4466706631261719175}
   - component: {fileID: 3821793576958542141}
+  - component: {fileID: 8963426463902128130}
   m_Layer: 6
   m_Name: EthernetPort (11)
   m_TagString: SwitchPort
@@ -1076,6 +1175,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &8963426463902128130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4430260051243925984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &4895747550487440819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1200,7 @@ GameObject:
   - component: {fileID: 3851938886374392426}
   - component: {fileID: 6869574814783237514}
   - component: {fileID: 5929260959244574748}
+  - component: {fileID: 6930606992157528293}
   m_Layer: 6
   m_Name: EthernetPort (4)
   m_TagString: SwitchPort
@@ -1181,6 +1294,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &6930606992157528293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4895747550487440819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &6156047443764379809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,6 +1319,7 @@ GameObject:
   - component: {fileID: 1350929057955933740}
   - component: {fileID: 7209054625011809471}
   - component: {fileID: 1393825385685358213}
+  - component: {fileID: 2819102442373161704}
   m_Layer: 6
   m_Name: EthernetPort (7)
   m_TagString: SwitchPort
@@ -1286,6 +1413,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &2819102442373161704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156047443764379809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &7821104573402593897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1438,7 @@ GameObject:
   - component: {fileID: 2361395411318944158}
   - component: {fileID: 5653980895303381268}
   - component: {fileID: 417891183396069175}
+  - component: {fileID: 3260026818323243591}
   m_Layer: 6
   m_Name: EthernetPort (1)
   m_TagString: SwitchPort
@@ -1391,6 +1532,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &3260026818323243591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7821104573402593897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &7845729203431259098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,6 +1557,7 @@ GameObject:
   - component: {fileID: 2151993628579176903}
   - component: {fileID: 660059163267051012}
   - component: {fileID: 2574859848641110858}
+  - component: {fileID: 8308457286701785264}
   m_Layer: 6
   m_Name: EthernetPort
   m_TagString: SwitchPort
@@ -1496,6 +1651,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &8308457286701785264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7845729203431259098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &7891693047067640843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,6 +1676,7 @@ GameObject:
   - component: {fileID: 8281371053626541586}
   - component: {fileID: 1733313809758228910}
   - component: {fileID: 7108593898090146412}
+  - component: {fileID: 1266089566384609414}
   m_Layer: 6
   m_Name: EthernetPort (10)
   m_TagString: SwitchPort
@@ -1601,6 +1770,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &1266089566384609414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7891693047067640843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1 &8218110065730703940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,6 +1795,7 @@ GameObject:
   - component: {fileID: 4566461058650456958}
   - component: {fileID: 7209748569461707540}
   - component: {fileID: 5160809816479322769}
+  - component: {fileID: 8050807977534964308}
   m_Layer: 6
   m_Name: EthernetPort (2)
   m_TagString: SwitchPort
@@ -1706,6 +1889,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Center: {x: 0.00000047683716, y: -0.00000011920928, z: 0}
+--- !u!114 &8050807977534964308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218110065730703940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(While Holding Cable)                          E : Connect Cable'
 --- !u!1001 &355230926362292943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1899,7 +2095,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd250a768ff67646902c80513cad8e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promoptMessage: 'F : Pick Up'
+  promoptMessage: 'F : Pick Up Switch                                       E : Acces
+    VLAN Table'
   nameText: {fileID: 3531982279552000817}
   deviceInfo: {fileID: 0}
   infoPanel: {fileID: 0}
