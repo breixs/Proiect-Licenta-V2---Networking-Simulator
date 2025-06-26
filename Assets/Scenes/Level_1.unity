@@ -1121,8 +1121,8 @@ RectTransform:
   - {fileID: 1993838162}
   - {fileID: 563741373}
   - {fileID: 1926753672}
-  - {fileID: 1584045230}
   - {fileID: 129665801}
+  - {fileID: 1584045230}
   - {fileID: 1613241572}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7061,6 +7061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rack3 1
       objectReference: {fileID: 0}
+    - target: {fileID: 441046392634335217, guid: 5c63d4cf82b2b9640a9823085eae3823, type: 3}
+      propertyPath: m_TagString
+      value: Rack
+      objectReference: {fileID: 0}
     - target: {fileID: 960737832305919307, guid: 5c63d4cf82b2b9640a9823085eae3823, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.86931443
@@ -8339,6 +8343,26 @@ PrefabInstance:
     - target: {fileID: 4447882577459217014, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163403367459993281, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
+      propertyPath: m_text
+      value: 'Basic Controls:
+
+        WASD - Move
+
+        Left CTRL - Crouch
+
+        Space
+        - Jump
+
+        F - Pick Up
+
+        E - Interact
+
+        Escape - Pause
+
+        Tab
+        - Notebook'
       objectReference: {fileID: 0}
     - target: {fileID: 8301858170237657936, guid: 4122d10d07232c343a396f890a4c1ff7, type: 3}
       propertyPath: m_Pivot.x

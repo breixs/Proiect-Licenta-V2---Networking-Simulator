@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Port : Interactable
 {
-    public GameObject parent;
+    public GameObject parentObj;
     private Rigidbody objRb;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,14 @@ public class Port : Interactable
     {
         if (gameObject.transform.parent == null)
         {
-            gameObject.transform.parent = parent.transform;
+            gameObject.transform.parent = parentObj.transform;
+            objRb.isKinematic = false;
+            objRb.useGravity = true;
+        }
+
+        if((gameObject.transform.parent.CompareTag("Switch") || gameObject.transform.parent.CompareTag("Router")) && gameObject.transform.parent.parent==null)
+        {
+            gameObject.transform.parent=parentObj.transform;
             objRb.isKinematic = false;
             objRb.useGravity = true;
         }
@@ -25,9 +32,9 @@ public class Port : Interactable
     protected override void Interact()
     {
         Debug.Log("interacted with " + gameObject.name);
-        if(gameObject.transform.parent != null && gameObject.transform.parent!=parent.transform)
+        if(gameObject.transform.parent != null && gameObject.transform.parent!=parentObj.transform)
         {
-            gameObject.transform.parent = parent.transform;
+            gameObject.transform.parent = parentObj.transform;
             objRb.isKinematic = false;
             objRb.useGravity=true;
             

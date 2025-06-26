@@ -57,7 +57,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5493987173342472387}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -179,6 +179,11 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
+  audioSourceDoor: {fileID: 0}
+  audioClipDoor: {fileID: 0}
+  audioSourceConnect: {fileID: 0}
+  audioClipConnect: {fileID: 0}
+  backgroundSound: {fileID: 0}
 --- !u!114 &5656126637210478056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +198,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptText: {fileID: 0}
   taskText: {fileID: 0}
+  alertText: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  notebookMenu: {fileID: 0}
+  endMenu: {fileID: 0}
+  gameOverMenu: {fileID: 0}
+  terminal: {fileID: 0}
 --- !u!114 &8159605321084596460
 MonoBehaviour:
   m_ObjectHideFlags: 0

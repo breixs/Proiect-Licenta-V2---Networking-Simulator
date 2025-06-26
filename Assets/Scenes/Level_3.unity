@@ -11089,6 +11089,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Switch 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3260026818323243591, guid: 60bc99bf28f22de4798a06a9b5a533d0, type: 3}
+      propertyPath: promoptMessage
+      value: '(Switch is on rack & holding cable)            E : Connect Cable'
+      objectReference: {fileID: 0}
     - target: {fileID: 5824299310897415311, guid: 60bc99bf28f22de4798a06a9b5a533d0, type: 3}
       propertyPath: infoPanel
       value: 

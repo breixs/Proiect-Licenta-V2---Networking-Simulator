@@ -144,7 +144,7 @@ public class PlayerInteract : MonoBehaviour
 
                         if (inputManager.onFoot.Interact.triggered)
                         {
-                            pickUpScript.SetObject(hitInfo.collider.transform.position);
+                            pickUpScript.SetObject(hitInfo.collider.transform.position, hitInfo.transform.parent.gameObject);
                             isHolding = false;
                             
                         }
@@ -158,7 +158,7 @@ public class PlayerInteract : MonoBehaviour
 
                         if (inputManager.onFoot.Interact.triggered)
                         {
-                            pickUpScript.SetObject(hitInfo.collider.transform.position);
+                            pickUpScript.SetObject(hitInfo.collider.transform.position, hitInfo.transform.parent.gameObject);
                             isHolding = false;
                             
                         }
@@ -169,11 +169,18 @@ public class PlayerInteract : MonoBehaviour
 
             if ((isHoldingRope || isHoldingConsole) && (hitInfo.collider.CompareTag("SwitchPort") || hitInfo.collider.CompareTag("ConsolePort") || hitInfo.collider.CompareTag("LaptopPort") || hitInfo.collider.CompareTag("PanelPort")))
             {
-                if (isHoldingRope && inputManager.onFoot.Interact.triggered && (hitInfo.collider.CompareTag("SwitchPort") || hitInfo.collider.CompareTag("PanelPort")))
+                if (isHoldingRope && inputManager.onFoot.Interact.triggered && hitInfo.transform.parent!=null && hitInfo.transform.parent.CompareTag("Rack") && (hitInfo.collider.CompareTag("SwitchPort")))
                 {
                     audioSourceConnect.PlayOneShot(audioClipConnect);
                     pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject, new Vector3(0, -90, 0));
                     isHoldingRope = false;
+                    isHolding = false;
+                }
+                else if (isHoldingRope && inputManager.onFoot.Interact.triggered && hitInfo.collider.CompareTag("PanelPort"))
+                {
+                    audioSourceConnect.PlayOneShot(audioClipConnect);
+                    pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject, new Vector3(0, -90, 0));
+                    isHoldingConsole = false;
                     isHolding = false;
                 }
                 else if (isHoldingConsole && inputManager.onFoot.Interact.triggered && hitInfo.collider.CompareTag("LaptopPort"))
@@ -183,7 +190,7 @@ public class PlayerInteract : MonoBehaviour
                     isHoldingConsole = false;
                     isHolding = false;
                 }
-                else if (isHoldingConsole && inputManager.onFoot.Interact.triggered && (hitInfo.collider.CompareTag("ConsolePort")))
+                else if (isHoldingConsole && inputManager.onFoot.Interact.triggered && hitInfo.transform.parent != null && hitInfo.transform.parent.CompareTag("Rack") && (hitInfo.collider.CompareTag("ConsolePort")))
                 {
                     audioSourceConnect.PlayOneShot(audioClipConnect);
                     pickUpScript.ConnectObject(hitInfo.collider.transform.position, hitInfo.collider.transform.parent.gameObject, new Vector3(0, -90, 0));

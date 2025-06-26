@@ -16,6 +16,12 @@ public class SpawnButton : Interactable
 
     public static int switchesRemaining = 10;
     public static int routersRemaining = 8;
+
+    private void Start()
+    {
+        switchesRemaining = 10;
+        routersRemaining = 8;
+    }
     protected override void Interact()
     {
         if (gameObject.CompareTag("SpawnSwitch") && switchDeviceNumber<10)

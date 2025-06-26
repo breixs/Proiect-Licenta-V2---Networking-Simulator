@@ -304,6 +304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rackWithPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 8717514053158470201, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
+      propertyPath: m_TagString
+      value: Rack
+      objectReference: {fileID: 0}
     - target: {fileID: 8801939192842957791, guid: f1c5f8c4ca1bda14088c3ca829739d40, type: 3}
       propertyPath: m_Name
       value: PanelPort 1

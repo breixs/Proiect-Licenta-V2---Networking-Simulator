@@ -71,7 +71,7 @@ public class PickUpScript : MonoBehaviour
         heldObjRb.AddForce(transform.forward * throwForce);
         heldObj = null;
     }
-    public void SetObject(Vector3 pos)
+    public void SetObject(Vector3 pos, GameObject parentObj)
     {
         Vector3 rot = new Vector3(0, -90, 0);
         heldObj.transform.position = pos;
@@ -79,7 +79,7 @@ public class PickUpScript : MonoBehaviour
         heldObjRb.useGravity = false;
         heldObj.transform.rotation = Quaternion.Euler(rot);
         heldObjColl.isTrigger = false;
-        DropObject(true, null);
+        DropObject(true, parentObj);
 
     }
 

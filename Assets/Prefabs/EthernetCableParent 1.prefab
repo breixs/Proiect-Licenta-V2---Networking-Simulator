@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promoptMessage: 'E : Connect/Disconnect Cable F : Pick Up Cable'
-  parent: {fileID: 7897511255968510844}
+  parentObj: {fileID: 0}
 --- !u!1 &2169852961198470373
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promoptMessage: 'E : Connect/Disconnect Cable F : Pick Up Cable'
-  parent: {fileID: 7897511255968510844}
+  parentObj: {fileID: 7897511255968510844}
 --- !u!54 &4349659667129659437
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promoptMessage: 'E : Connect/Disconnect Cable F : Pick Up Cable'
-  parent: {fileID: 7897511255968510844}
+  parentObj: {fileID: 7897511255968510844}
 --- !u!54 &2053982404748852028
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -855,7 +855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promoptMessage: 'E : Connect/Disconnect Cable F : Pick Up Cable'
-  parent: {fileID: 7897511255968510844}
+  parentObj: {fileID: 0}
 --- !u!1001 &3781330303442898575
 PrefabInstance:
   m_ObjectHideFlags: 0

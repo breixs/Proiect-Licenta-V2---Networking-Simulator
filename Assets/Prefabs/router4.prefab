@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3632195998470822407}
   - component: {fileID: 1291029180838183784}
   - component: {fileID: 6171427632507394794}
+  - component: {fileID: 1281759591964689591}
   m_Layer: 6
   m_Name: RouterPort (1)
   m_TagString: SwitchPort
@@ -105,6 +106,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000005, y: 1, z: 1.0000004}
   m_Center: {x: -0.0000002384187, y: 0, z: -0.0000004768375}
+--- !u!114 &1281759591964689591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160218679638397102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(Router is on rack & holding cable)            E : Connect Cable'
 --- !u!1 &1199727543578626106
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +265,7 @@ GameObject:
   - component: {fileID: 5761630277537870145}
   - component: {fileID: 1217218057092335276}
   - component: {fileID: 6331595037397071392}
+  - component: {fileID: 6508915450655266133}
   m_Layer: 6
   m_Name: RouterPort (8)
   m_TagString: SwitchPort
@@ -344,6 +359,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000005, y: 1, z: 1.0000004}
   m_Center: {x: -0.0000002384187, y: 0, z: -0.0000004768375}
+--- !u!114 &6508915450655266133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528227388740838067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(Router is on rack & holding cable)            E : Connect Cable'
 --- !u!1 &2221222470247184009
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +384,7 @@ GameObject:
   - component: {fileID: 659473579221832362}
   - component: {fileID: 1882233971633658401}
   - component: {fileID: 2387120385724421979}
+  - component: {fileID: 8854166480804120215}
   m_Layer: 6
   m_Name: RouterPort (3)
   m_TagString: SwitchPort
@@ -449,6 +478,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000005, y: 1, z: 1.0000004}
   m_Center: {x: -0.0000002384187, y: 0, z: -0.0000004768375}
+--- !u!114 &8854166480804120215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221222470247184009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(Router is on rack & holding cable)            E : Connect Cable'
 --- !u!1 &3099224908133889557
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +503,7 @@ GameObject:
   - component: {fileID: 6276260837353224530}
   - component: {fileID: 5864886304469345462}
   - component: {fileID: 2341278496011514327}
+  - component: {fileID: 5240355743861261838}
   m_Layer: 6
   m_Name: RouterPort
   m_TagString: SwitchPort
@@ -554,6 +597,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000005, y: 1, z: 1.0000004}
   m_Center: {x: -0.0000002384187, y: 0, z: -0.0000004768375}
+--- !u!114 &5240355743861261838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3099224908133889557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(Router is on rack & holding cable)            E : Connect Cable'
 --- !u!1 &3564243137983199963
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +622,7 @@ GameObject:
   - component: {fileID: 469145735625541094}
   - component: {fileID: 6278503758910232955}
   - component: {fileID: 5562290685901300509}
+  - component: {fileID: 6596745903323167242}
   m_Layer: 6
   m_Name: RouterPort (4)
   m_TagString: SwitchPort
@@ -659,6 +716,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000005, y: 1, z: 1.0000004}
   m_Center: {x: -0.0000002384187, y: 0, z: -0.0000004768375}
+--- !u!114 &6596745903323167242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564243137983199963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(Router is on rack & holding cable)            E : Connect Cable'
 --- !u!1 &7163077044134098410
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +741,7 @@ GameObject:
   - component: {fileID: 8942735556805161367}
   - component: {fileID: 7131428146438207205}
   - component: {fileID: 3048385444381653630}
+  - component: {fileID: 1721918718977832317}
   m_Layer: 6
   m_Name: RouterPort (7)
   m_TagString: SwitchPort
@@ -764,6 +835,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000005, y: 1, z: 1.0000004}
   m_Center: {x: -0.0000002384187, y: 0, z: -0.0000004768375}
+--- !u!114 &1721918718977832317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7163077044134098410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(Router is on rack & holding cable)            E : Connect Cable'
 --- !u!1 &7640008490388929943
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +860,7 @@ GameObject:
   - component: {fileID: 7663489547349807866}
   - component: {fileID: 901928043718414422}
   - component: {fileID: 5284017704005808713}
+  - component: {fileID: 5612894246403676432}
   m_Layer: 6
   m_Name: RouterPort (2)
   m_TagString: SwitchPort
@@ -869,6 +954,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000005, y: 1, z: 1.0000004}
   m_Center: {x: -0.0000002384187, y: 0, z: -0.0000004768375}
+--- !u!114 &5612894246403676432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7640008490388929943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(Router is on rack & holding cable)            E : Connect Cable'
 --- !u!1 &7959766846082018018
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +979,7 @@ GameObject:
   - component: {fileID: 1951191845166747231}
   - component: {fileID: 48937359449838758}
   - component: {fileID: 6762937576849016183}
+  - component: {fileID: 5261068552840479472}
   m_Layer: 6
   m_Name: RouterPort (5)
   m_TagString: SwitchPort
@@ -974,6 +1073,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000005, y: 1, z: 1.0000004}
   m_Center: {x: -0.0000002384187, y: 0, z: -0.0000004768375}
+--- !u!114 &5261068552840479472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7959766846082018018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(Router is on rack & holding cable)            E : Connect Cable'
 --- !u!1 &8081685484077230982
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,6 +1098,7 @@ GameObject:
   - component: {fileID: 4647075700778381224}
   - component: {fileID: 4837114585745356100}
   - component: {fileID: 4626245969103556211}
+  - component: {fileID: 5654131525029471748}
   m_Layer: 6
   m_Name: RouterPort (6)
   m_TagString: SwitchPort
@@ -1079,6 +1192,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000005, y: 1, z: 1.0000004}
   m_Center: {x: -0.0000002384187, y: 0, z: -0.0000004768375}
+--- !u!114 &5654131525029471748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8081685484077230982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da286aaa6444b6e4983e3501419345fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promoptMessage: '(Router is on rack & holding cable)            E : Connect Cable'
 --- !u!1 &8957538937287395737
 GameObject:
   m_ObjectHideFlags: 0
